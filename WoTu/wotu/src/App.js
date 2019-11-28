@@ -9,8 +9,8 @@ import Reg from './pages/Reg'
 import Goods from './pages/Goods'
 import Mine from './pages/Mine'
 
-import { Menu, Icon, Layout } from 'antd';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import { Menu, Icon } from 'antd';
+import 'antd/dist/antd.css';
 class App extends Component{
   state = {
     menu: [
@@ -49,7 +49,7 @@ class App extends Component{
   render() {
     return (
       <div>
-           <Switch>
+          <Switch>
               <Route path="/home" component={Home}/>
               <Route path="/list" component={List}/>
               <Route path="/settingwall" component={SettingWall} />
@@ -60,22 +60,23 @@ class App extends Component{
               <Route path="/notfound" render={()=><div>404页面</div>}/>
               <Redirect from="/" to="/home" exact/>
               <Redirect to="/notfound"/>
-        </Switch> 
-          <Menu
-                onClick={this.goto}
-                // selectedKeys={this.state.currentPath}
-                mode="horizontal"
-            >
-                {
-                    this.state.menu.map(item => {
-                    return  <Menu.Item key={item.path}>
-                              <Icon type={item.icon}/>
-                              {item.text}
-                        </Menu.Item>
-                    })
-               }
-            </Menu>
-
+          </Switch> 
+       <Menu
+            onClick={this.goto}
+            // selectedKeys={this.state.currentPath}
+            mode="horizontal"
+            theme='dark'
+        >
+            {
+                this.state.menu.map(item => {
+                return  <Menu.Item key={item.path}>
+                          <Icon type={item.icon}/>
+                          {item.text}
+                     </Menu.Item>
+                })
+        }
+        </Menu>
+         
     </div>
    )
   }

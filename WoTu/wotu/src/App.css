@@ -83,33 +83,13 @@ img {
   display: block;
 }
 
-.nav {
-  width: 100%;
-  height: 1.04rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border-top: 1px solid #ddd;
-}
-
-.nav .icon {
-  width: .666667rem;
-  height: .666667rem;
-}
 .ant-menu {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
 }
-.ant-menu-horizontal{
-  border-top: 1px solid red;
-}
+
 .ant-menu-item {
   width: 25%;
-  text-align: center;
-  /* height: 0.57rem; */
 }
