@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import { HashRouter } from 'react-router-dom'
-import './index.css';
+import {Provider} from 'react-redux';
+import './js/flexble'
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-    <HashRouter>
-        <App />
-    </HashRouter>,
-    document.getElementById('root'));
+render(
+    // <Provider store={3}>
+        <HashRouter>
+            <App/>
+        </HashRouter>
+    // </Provider >
+    ,
+    document.getElementById('root')
+);
 
-serviceWorker.unregister();
+// serviceWorker.unregister();

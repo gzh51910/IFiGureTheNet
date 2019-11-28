@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch,withRouter } from 'react-router-dom';
-import './App.css'
+// import './App.scss'
 import Home from './pages/Home'
 import List from './pages/List'
 import SettingWall from './pages/SettingWall'
@@ -9,8 +9,8 @@ import Reg from './pages/Reg'
 import Goods from './pages/Goods'
 import Mine from './pages/Mine'
 
-import { Menu, Icon, Layout } from 'antd';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import { Menu, Icon } from 'antd';
+
 class App extends Component{
   state = {
     menu: [
@@ -22,13 +22,13 @@ class App extends Component{
          }, {
            name: 'list',
            path: '/list',
-           icon: 'appstore',
+           icon: 'compass',
            text: '分类'
          },
          {
            name: 'settingwall',
            path: '/settingwall',
-           icon: 'database',
+           icon: 'shopping-cart',
            text: '背景墙'
          }, {
            name: 'mine',
@@ -49,6 +49,21 @@ class App extends Component{
   render() {
     return (
       <div>
+       <Menu
+            onClick={this.goto}
+            // selectedKeys={this.state.currentPath}
+            mode="horizontal"
+            theme='dark'
+        >
+            {
+                this.state.menu.map(item => {
+                return  <Menu.Item key={item.path}>
+                          <Icon type={item.icon}/>
+                          {item.text}
+                     </Menu.Item>
+                })
+        }
+        </Menu>
            <Switch>
               <Route path="/home" component={Home}/>
               <Route path="/list" component={List}/>
@@ -60,25 +75,10 @@ class App extends Component{
               <Route path="/notfound" render={()=><div>404页面</div>}/>
               <Redirect from="/" to="/home" exact/>
               <Redirect to="/notfound"/>
-        </Switch> 
-          <Menu
-                onClick={this.goto}
-                // selectedKeys={this.state.currentPath}
-                mode="horizontal"
-            >
-                {
-                    this.state.menu.map(item => {
-                    return  <Menu.Item key={item.path}>
-                              <Icon type={item.icon}/>
-                              {item.text}
-                        </Menu.Item>
-                    })
-               }
-            </Menu>
-
+          </Switch> 
     </div>
    )
   }
 }
-App = withRouter(App);
+// App = withRouter(App);
 export default App;
