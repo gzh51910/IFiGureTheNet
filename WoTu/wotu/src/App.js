@@ -10,7 +10,7 @@ import Goods from './pages/Goods'
 import Mine from './pages/Mine'
 
 import { Menu, Icon } from 'antd';
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 class App extends Component{
   state = {
        menu: [{
@@ -48,6 +48,18 @@ class App extends Component{
   render() {
     return (
       <div>
+          <Switch>
+              <Route path="/home" component={Home}/>
+              <Route path="/list" component={List}/>
+              <Route path="/settingwall" component={SettingWall} />
+              <Route path="/mine" component={Mine}/>
+              <Route path="/reg" component={Reg}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/goods/:id" component={Goods} />
+              <Route path="/notfound" render={()=><div>404页面</div>}/>
+              <Redirect from="/" to="/home" exact/>
+              <Redirect to="/notfound"/>
+          </Switch> 
        <Menu
             onClick={this.goto}
             // selectedKeys={this.state.currentPath}
@@ -63,18 +75,7 @@ class App extends Component{
                 })
         }
         </Menu>
-           <Switch>
-              <Route path="/home" component={Home}/>
-              <Route path="/list" component={List}/>
-              <Route path="/settingwall" component={SettingWall} />
-              <Route path="/mine" component={Mine}/>
-              <Route path="/reg" component={Reg}/>
-              <Route path="/login" component={Login}/>
-              <Route path="/goods/:id" component={Goods} />
-              <Route path="/notfound" render={()=><div>404页面</div>}/>
-              <Redirect from="/" to="/home" exact/>
-              <Redirect to="/notfound"/>
-          </Switch> 
+         
     </div>
    )
   }
