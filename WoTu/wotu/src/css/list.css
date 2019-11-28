@@ -1,0 +1,17 @@
+
+.Search-warp{
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left:0;
+    height: 1rem;
+    background: #0EC5A1;
+    margin: 0 auto;
+    line-height: 1rem;
+    text-align: center;
+}
+/* .Search{
+    width: 80%;
+    margin: 0 auto;
+    color: red;
+} */

@@ -63,9 +63,8 @@ class App extends Component{
           </Switch> 
        <Menu
             onClick={this.goto}
-            // selectedKeys={this.state.currentPath}
+            selectedKeys={this.state.currentPath}
             mode="horizontal"
-            theme='dark'
         >
             {
                 this.state.menu.map(item => {
