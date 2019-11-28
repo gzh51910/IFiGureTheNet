@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react'
 import '../css/list.css';
-import { Input,Icon } from 'antd';
+import { Input,Icon,Tabs,Divider} from 'antd';
 const { Search } = Input;
-
+const { TabPane } = Tabs;
 class List extends Component{
     state = {
+        title:'',
         menu: [
             {
                 name: '装饰画 / 玄关装饰'
@@ -43,12 +44,27 @@ class List extends Component{
             {
                 name: '摄影图/创意合成'
             },
+             {
+                 name: '摄影图/创意a'
+            },
+              {
+                  name: '摄影图/创意b成'
+              },
         ]
+    }
+     callback=(key)=>{
+        console.log(key);
+    }
+    goto = (name) =>{
+        this.setState({
+            title:name
+        })
+        
     }
     render() {
         return (
-            <div>
-                < div className='Search-warp' >
+            <section >
+                < article className = 'Search-warp' >
                     < Icon type="left"
                         style={{
                             fontSize: '.5rem', margin: '0 0.13rem 0 -0.4rem',
@@ -61,8 +77,29 @@ class List extends Component{
                         placeholder="请输入标题、关键词搜索"
                         onSearch={value => console.log(value)}
                         />
-                </div>
-            </div>
+                </article>
+                <article style={{position:"absolute",top:'1rem'}}>
+                    <ul>
+                        {
+                            this.state.menu.map(item => {
+                                return <li
+                                    className='nav-left'
+                                    key={item.name}
+                                    onClick={this.goto.bind(this,item.name)}
+                                >
+                                    {item.name}
+                                </li>
+                            })
+                        }
+                    </ul>
+                </article>
+                <article className='Title'>
+                    <h4>进入{this.state.title}频道</h4>
+                </article>
+                <article style={{width:'5rem',marginTop:'1.2rem',marginLeft:'30%'}}>
+                    < Divider className ='divider'> <span style={{fontSize:'12px'}}>主要分类</span> </Divider>
+                </article>
+            </section>
         )
     }
 }

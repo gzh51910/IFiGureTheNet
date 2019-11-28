@@ -82,10 +82,14 @@ img {
     display: block;
 }
 .ant-menu {
-    position: absolute;
+    display: flex;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 1rem;
+    text-align: center;
+    align-items:center;
 }
 
 .ant-menu-item {
