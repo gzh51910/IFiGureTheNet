@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
+import '../css/mine.css'
 class Mine extends Component {
     render() {
         return (
-             <h1>我的</h1>
+            <section>
+                <article className='head'>
+                    <article>
+                        
+                    </article>
+                    <article></article>
+
+                </article>
+            </section>
         )
     }
 }

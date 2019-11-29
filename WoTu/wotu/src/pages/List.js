@@ -8,48 +8,36 @@ class List extends Component{
     state = {
         title:'',
         menu: [
-            {
-                name: '装饰画 / 玄关装饰'
-            },
-            {
-                name: '背景墙/壁纸'
-            },
-            {
-                name: '地面/吊顶设计'
-            },
-            {
-                name: '平面/展板/海报'
-            },
-            {
-                name: '文化墙/展馆/宣传栏'
-            },
-            {
-                name: '视频/配乐/实拍'
-            },
-            {
-                name: 'PPT模板/办公文档'
-            },
-            {
-                name: '手抄报/档案/课件'
-            },
-            {
-                name: '电商淘宝/新媒体/UI'
-            },
-            {
-                name: '元素/矢量/样机/插画'
-            },
-            {
-                name: '服装/家居/数码图案'
-            },
-            {
-                name: '摄影图/创意合成'
-            },
              {
+                 name: '装饰画 / 玄关装饰'
+             }, {
+                 name: '背景墙/壁纸'
+             }, {
+                 name: '地面/吊顶设计'
+             }, {
+                 name: '平面/展板/海报'
+             }, {
+                 name: '文化墙/展馆/宣传栏'
+             }, {
+                 name: '视频/配乐/实拍'
+             }, {
+                 name: 'PPT模板/办公文档'
+             }, {
+                 name: '手抄报/档案/课件'
+             }, {
+                 name: '电商淘宝/新媒体/UI'
+             }, {
+                 name: '元素/矢量/样机/插画'
+             }, {
+                 name: '服装/家居/数码图案'
+             }, {
+                 name: '摄影图/创意合成'
+             }, {
                  name: '摄影图/创意a'
-            },
-              {
-                  name: '摄影图/创意b成'
-              },
+             }, {
+                 name: '摄影图/创意b成'
+             },
+
         ]
     }
      callback=(key)=>{
@@ -63,7 +51,7 @@ class List extends Component{
     }
     render() {
         return (
-            <section >
+                       <section >
                 < article className = 'Search-warp' >
                     < Icon type="left"
                         style={{
