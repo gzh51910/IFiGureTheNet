@@ -1,5 +1,85 @@
+.warp{
+    height: 13rem;
+    background: #f6f6f6;
+}
 .head{
     width: 100%;
     height: 2.45rem;
     background: #0cc59e;
+    display: flex;
+    align-items: center;
+
+}
+.message{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 .4rem;
+    
+}
+.ID p{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.32rem;
+    line-height: .1rem;
+    align-self:center;
+}
+.pic{
+    width: 1.08rem;
+    height: 1.08rem;
+    border-radius: 50%;
+    /* background: red; */
+    background: url(../img/TX.jpg);
+    background-size: 1.08rem 1.08rem;
+}
+.account{
+    height: 1.2rem;
+    /* background: chartreuse; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 0.8rem;
+    background: #fff;
+    margin-bottom: 0.08rem;
+}
+.account span{
+      color: #2d2d2d;
+      font-size: 0.28rem;
+}
+.account a{
+    color: #fff;
+}
+.setting-wrap{
+    background: #fff;
+     margin-bottom: 0.08rem;
+}
+.setting{
+    height: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 0.8rem;
+
+}
+.icon-warp{
+    color: #2d2d2d;
+    font-size: 0.28rem;
+}
+.icon{
+    margin-right: 0.2rem;
+    font-size: 0.4rem;
+    width: 0.5rem;
+}
+.logout{
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.logout span{
+    color: #2d2d2d;
+    font-size: 0.28rem;
 }
