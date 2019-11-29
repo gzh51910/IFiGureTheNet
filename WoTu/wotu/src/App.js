@@ -29,7 +29,7 @@ class App extends Component{
            name: 'settingwall',
            path: '/settingwall',
            icon: 'database',
-           text: '订单'
+           text: '背景墙'
          }, {
            name: 'mine',
            path: '/mine',
