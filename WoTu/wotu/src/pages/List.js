@@ -51,16 +51,19 @@ class List extends Component{
     }
     render() {
         return (
-                       <section >
-                < article className = 'Search-warp' >
+            <section >
+                <article className = 'Search-warp' >
                     < Icon type="left"
                         style={{
-                            fontSize: '.5rem', margin: '0 0.13rem 0 -0.4rem',
-                            color:'#fff'
+                           position: 'absolute',
+                            left: '0.4rem',
+                            top:'.25rem',
+                            color: '#fff',
+                            fontSize: '0.5rem'
                         }}
                     />
                     <Search
-                        style={{ width: '80%',borderRadius:'30%'}}
+                        style={{ width: '5rem',height:'0.7rem',borderRadius:'30%'}}
                         className='Search'
                         placeholder="请输入标题、关键词搜索"
                         onSearch={value => console.log(value)}
