@@ -8,7 +8,7 @@ import Login from './pages/Login'
 import Reg from './pages/Reg'
 import Goods from './pages/Goods'
 import Mine from './pages/Mine'
-
+import MyCenter from './pages/MyCenter'
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
 class App extends Component{
@@ -56,6 +56,7 @@ class App extends Component{
               <Route path="/mine" component={Mine}/>
               <Route path="/reg" component={Reg}/>
               <Route path="/login" component={Login}/>
+              <Route path="/mycenter" component={MyCenter} />
               <Route path="/goods/:id" component={Goods} />
               <Route path="/notfound" render={()=><div>404页面</div>}/>
               <Redirect from="/" to="/home" exact/>
