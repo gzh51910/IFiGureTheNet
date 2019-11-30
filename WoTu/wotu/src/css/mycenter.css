@@ -1,27 +1,34 @@
-input,button,section{
+input,
+button,
+section {
     outline: none;
 }
-.head-wrap{
+
+.head-wrap {
     width: 100%;
-    height:1.04rem;
+    height: 1.04rem;
     background: #0cc59e;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 .3rem;
 }
-.head-wrap span{
-    font-size: .32rem;
+
+.head-wrap span {
+    font-size: 0.32rem;
     color: #ffffff;
 }
-.Tabs{
+
+.Tabs {
     text-align: center;
 }
-.Tabs .TabPane{
+
+.Tabs .TabPane {
     color: chartreuse;
     text-align: center;
 }
-.Figure{
+
+.Figure {
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
@@ -30,6 +37,7 @@ input,button,section{
     background-size: 2.25rem 2.25rem;
     margin: 1rem 0 0.3rem 0;
 }
+
 .Wotu {
     width: 2.25rem;
     height: 2.25rem;
@@ -38,51 +46,54 @@ input,button,section{
     background: url(../img/wotu.jpg) center no-repeat;
     background-size: 2.25rem 2.25rem;
     margin: 1rem 0 0.3rem 0;
-
-
-
 }
-.Login{
+
+.Login {
     display: flex;
     justify-content: space-around;
     position: relative;
     background: #f6f6f6;
     padding-bottom: 6.5rem;
 }
-.Span{
+
+.Span {
     color: #2d2d2d;
     font-size: .26rem;
 }
-.Reg{
+
+.Reg {
     height: 10.2rem;
     background: #f6f6f6;
     padding: 0.2rem;
 }
-.verification-wrap{
+
+.verification-wrap {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.3rem
 }
-.verification{
+
+.verification {
     width: 3.5rem;
     height: .9rem;
     padding: 0 0.1rem;
     border-radius: 0.1rem;
 }
-.btnA{
+
+.btnA {
     width: 3.2rem;
-     background: #0cc59e;
-     border:0;
-     color: #fff;
-     border-radius: 0.1rem;
+    background: #0cc59e;
+    border: 0;
+    color: #fff;
+    border-radius: 0.1rem;
 }
-.btnB{
+
+.btnB {
     width: 100%;
     height: 0.9rem;
     background: #0cc59e;
-     color: #fff;
-     border-radius: 0.1rem;
-    border:0;
-
+    color: #fff;
+    border-radius: 0.1rem;
+    border: 0;
 }
