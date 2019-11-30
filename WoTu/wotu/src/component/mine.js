@@ -1,14 +1,14 @@
 import React from 'react'
 import '../css/mine.css'
 import { Button, Icon } from 'antd';
-function Me({menu, Right}) {
+function Me({menu, Right,goto,ip}) {
         return (
             <section className='warp'>
                 <article className='head'>
                     <article className='message'>
                         <article className='ID'>
-                             <p>19128662457</p>
-                             <p>ID:12345678</p>
+                        <p>{ip[0].zhanghao}</p>
+                        <p>{ip[0].ID}</p>
                         </article>
                         <article className='pic'>
                             {/* <img src="../img/TX.jpg"/> */}
@@ -21,7 +21,7 @@ function Me({menu, Right}) {
                     <Button type="primary"
                         size='small'
                         style={{background:'#0cc59e'}}
-                    ><a>充值</a></Button>
+                    ><a onClick={goto}>充值</a></Button>
                 </article>
                 <article className='setting-wrap'>
                     {

@@ -1,0 +1,238 @@
+i,
+em {
+    font-style: normal;
+}
+
+
+/* 头部 */
+
+.bigBox {
+    background: #f6f6f6;
+}
+
+.classify-top {
+    background-color: #0ec5a1;
+    width: 100%;
+    height: 1.05rem;
+    padding: 0 0.3rem 0 0.2rem;
+    position: relative;
+    z-index: 3;
+}
+
+.classify-top .back-btn {
+    width: 0.4rem;
+    height: 0.5rem;
+    left: 0.2rem;
+    text-align: center;
+    position: absolute;
+    top: 0.38rem;
+}
+
+.nav-change {
+    width: 6rem;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 0.32rem;
+    text-align: center;
+    line-height: 1.05rem;
+}
+
+
+/* 账号显示 */
+
+.margin-none {
+    margin-bottom: 0;
+}
+
+.hello {
+    height: 1.04rem;
+    line-height: 1.04rem;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 0.3rem;
+    font-size: 0.26rem;
+}
+
+.hello p {
+    display: inline-block;
+    height: 1.04rem;
+    line-height: 1.04rem;
+    overflow: hidden;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.hello p i {
+    display: inline-block;
+    height: 1.04rem;
+    line-height: 1.04rem;
+}
+
+.hello span {
+    display: inline-block;
+    height: 1.04rem;
+    line-height: 1.04rem;
+    max-width: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: -0.43rem;
+}
+
+
+/* 充值金额 */
+
+.recharge-box {
+    width: 100%;
+    height: 0.78rem;
+    margin-top: 0.14rem;
+    padding-left: 0.3rem;
+    background: #fff;
+}
+
+.recharge-box h4 {
+    width: 50%;
+    height: 100%;
+    font-size: 0.28rem;
+    color: #2d2d2d;
+}
+
+
+/* 组件 */
+
+.smallBox {
+    width: 100%;
+    height: 8rem;
+    /* background: #0ec5a1; */
+}
+
+.ant-row {
+    width: 100%;
+}
+
+.ant-col-12 {
+    height: 100%;
+    background: #fff;
+    margin-left: 0.5rem;
+    border-radius: 0.1rem;
+    margin-bottom: 0.38rem;
+    text-align: center;
+    color: #0ec5a1;
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+    border: #dcdcdc 0.01rem solid;
+}
+
+
+/* 优惠券 */
+
+.couponCondition {
+    background-color: #fff;
+    margin: 0.14rem 0;
+    padding: 0 0.3rem;
+    width: 100%;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    font-size: 0.28rem;
+}
+
+.useCoupon {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+
+/* 应付金额 */
+
+.pay-money {
+    background-color: #fff;
+    margin: 0.14rem 0;
+    padding: 0.15rem 0.3rem;
+    width: 100%;
+}
+
+form,
+input,
+textarea {
+    outline: none;
+}
+
+.pay-money .should-pay {
+    font-size: 0.3rem;
+}
+
+.pay-money p {
+    line-height: 0.4rem;
+}
+
+.notice-word {
+    color: red;
+}
+
+
+/* 支付方式 */
+
+.pay-way {
+    background-color: #fff;
+    margin-bottom: 0.9rem;
+}
+
+.pay-way-list {
+    padding: 0rem 0.78rem 0rem 0.78rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    border-bottom: #f7f7f7 0.01rem solid;
+}
+
+.agree {
+    margin-left: 0.8rem;
+}
+
+.agree span {
+    color: red;
+}
+
+.check {
+    margin-left: 4rem;
+}
+
+.check1 {
+    margin-left: 4.23rem;
+}
+
+
+/* 填充条 */
+
+.pay-moneyq {
+    width: 100%;
+    height: 0.22rem;
+}
+
+
+/* 底部 */
+
+.pay-now {
+    position: fixed;
+    bottom: -0.15rem;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.pay-now h5 {
+    display: block;
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    background-color: #0ec5a1;
+    color: #fff;
+    text-align: center;
+    font-size: 0.32rem;
+}

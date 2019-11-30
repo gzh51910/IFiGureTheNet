@@ -20,11 +20,24 @@ class Mine extends Component {
                 name: '邮箱设置',
                 icon:"mail"
             }
+        ],
+        ip:[
+            {
+                zhanghao:19128662457,
+                ID:"ID:12345678",
+                wotomoney:"0我图币"
+            }
         ]
     }
+    goto=(ip)=>{
+        this.props.history.push({
+            pathname:`/money`,
+            params:ip
+        })
+    }
     render() {
-        let { Right, menu } = this.state
-        return <Me menu={menu} Right={Right} {...this.props}></Me>
+        let { Right, menu,ip } = this.state
+        return <Me menu={menu} Right={Right} goto={this.goto.bind(this,ip[0])} ip={ip}></Me>
     }
 }
 export default Mine;
