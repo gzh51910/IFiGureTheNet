@@ -9,7 +9,6 @@ import Reg from './pages/Reg'
 import Goods from './pages/Goods'
 import Mine from './pages/Mine'
 import Money from './pages/Money'
-
 import MyCenter from './pages/MyCenter'
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
@@ -46,7 +45,13 @@ class App extends Component{
             currentPath: path
         })
         history.push(path)
-    }
+  }
+  componentDidMount() {
+    console.log(this.props);
+    this.setState({
+      currentPath: this.props.location.pathname ? this.props.location.pathname:'./home'
+    })
+  }
   
   render() {
     return (
@@ -55,7 +60,7 @@ class App extends Component{
               <Route path="/home" component={Home}/>
               <Route path="/list" component={List}/>
               <Route path="/settingwall" component={SettingWall} />
-              <Route path="/mine" component={Mine}/>
+              <Route path="/mine" component={Mine} />
               <Route path="/reg" component={Reg}/>
               <Route path="/login" component={Login}/>
               <Route path="/mycenter" component={MyCenter} />

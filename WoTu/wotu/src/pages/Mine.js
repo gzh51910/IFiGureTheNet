@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import '../css/mine.css'
-import { Button, Icon } from 'antd';
+// import '../css/mine.css'
 import Me from '../component/mine'
 class Mine extends Component {
     state = {
@@ -35,9 +34,17 @@ class Mine extends Component {
             params:ip
         })
     }
+
+    
     render() {
+            // console.log(this);
         let { Right, menu,ip } = this.state
-        return <Me menu={menu} Right={Right} goto={this.goto.bind(this,ip[0])} ip={ip}></Me>
+        return <Me
+            menu={menu} Right={Right}
+            goto={this.goto.bind(this, ip[0])}
+            ip={ip}
+            {...this.props}
+        ></Me>
     }
 }
 export default Mine;
