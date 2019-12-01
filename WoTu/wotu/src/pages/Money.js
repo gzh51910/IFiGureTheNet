@@ -86,7 +86,6 @@ class Login extends Component {
         // } 
         const { inputValue } = this.state;
         // console.log(inputValue);
-        
         return (
            <div className="bigBox">
                {/* 头部 */}
@@ -142,7 +141,7 @@ class Login extends Component {
                         />
                         </Col>
                     </Row>
-                    ~~~请选择数量
+                    ~~~请选择金额
                     </div>
                 </div>
                 {/* 应付金额 */}
