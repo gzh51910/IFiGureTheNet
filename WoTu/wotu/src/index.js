@@ -8,7 +8,7 @@ import App from './App';
 render(
     // <Provider store={3}>
         <HashRouter>
-            <Route> <App/></Route>
+            <App/>
            
         </HashRouter>
     // </Provider >
