@@ -123,7 +123,7 @@ class Login extends Component {
                <div className="couponCondition clearfix">
                     <div className="fr useCoupon">
                     <Row style={{width:"70%",float:"left",height:"100%"}}>
-                        <Col span={12} style={{height:"100%",float:"left",margin:"0",width:"2.7rem",border:"0"}}>
+                        <Col span={12} style={{height:"100%",float:"left",marginTop:"2.5%",marginLeft:"0", width:"2.7rem",border:"0"}}>
                         <Slider
                             min={50}
                             max={60000}

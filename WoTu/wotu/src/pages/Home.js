@@ -238,12 +238,12 @@ class Home extends Component{
                                         {/* 图片加文字 */}
                                         <div className="cart_c">
                                         <Card
-                                            style={{ width: "50%",height:238,float:"left" }}
+                                            style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
                                             cover={<img alt="example" src={item.src_L} onClick={this.gotoGoods.bind(this,1)}/>}>
                                             <Meta title={item.title2} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,1)}/>
                                         </Card>
                                         <Card
-                                            style={{ width: "50%",height:238,float:"left" }}
+                                            style={{width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
                                             cover={<img alt="example" src={item.src_R}onClick={this.gotoGoods.bind(this,2)}/>}>
                                             <Meta title={item.title3} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,2)}/>
                                         </Card>
