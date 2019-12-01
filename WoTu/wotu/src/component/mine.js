@@ -1,7 +1,10 @@
 import React from 'react'
 import '../css/mine.css'
 import { Button, Icon } from 'antd';
-function Me({menu, Right,goto,ip}) {
+function Me({ menu, Right, goto, ip,history}) {
+    function logout() {
+        history.push('/mycenter')
+    }
         return (
             <section className='warp'>
                 <article className='head'>
@@ -52,7 +55,9 @@ function Me({menu, Right,goto,ip}) {
                                 width: '0.5rem'
                         }}
                     />
-                    <span>退出登录</span>
+                    <span
+                        onClick={logout}
+                    >退出登录</span>
                 </article>
             </section>
         )
