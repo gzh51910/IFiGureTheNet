@@ -1,16 +1,8 @@
 import React from 'react'
 import '../css/mycenter.css'
-import { Icon, Tabs,Radio, Select, } from 'antd'
+import {Tabs,Radio} from 'antd'
 const { TabPane } = Tabs;
 function MYC() {
-      function callback(key){
-           console.log(key);
-       }
-
-    function login(a) {
-        console.log(a);
-    }
-
     return (
         <section
             style={{ display: 'brock' }}
@@ -19,8 +11,6 @@ function MYC() {
                     <Tabs
                         defaultActiveKey="1"
                         className='Tabs'
-                        style={{marginBottom:'0'}}
-                        // onChange={this.callback}
                     >
                         <TabPane tab="登录" key="1" 
                         style={{marginBottom:'0'}}
@@ -32,7 +22,7 @@ function MYC() {
                                         <span className='Span'>QQ账号直接登录</span>
                                 </article>
                             <article
-                                onClick={login}
+                                // onClick={login}
                             >
                                     < article className = 'Wotu'/>
                                     < span className = 'Span'> 我图网账号登录 </span>

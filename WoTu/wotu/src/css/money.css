@@ -50,7 +50,7 @@ em {
     width: 100%;
     background-color: #fff;
     padding: 0 0.3rem;
-    font-size: 0.26rem;
+    font-size: 0.28rem;
 }
 
 .hello p {
@@ -78,11 +78,11 @@ em {
     display: inline-block;
     height: 1.04rem;
     line-height: 1.04rem;
-    max-width: 1.6rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    vertical-align: -0.43rem;
+    /* max-width: 1.6rem; */
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+    white-space: nowrap; 
+    /* vertical-align: -0.43rem; */
 }
 
 
@@ -91,16 +91,16 @@ em {
 .recharge-box {
     width: 100%;
     height: 0.78rem;
-    margin-top: 0.14rem;
+    /* margin-top: 0.14rem; */
     padding-left: 0.3rem;
-    background: #fff;
+    /* background: #fff; */
 }
 
 .recharge-box h4 {
-    width: 50%;
-    height: 100%;
     font-size: 0.28rem;
     color: #2d2d2d;
+    height: 0.8rem;
+    line-height: 0.8rem;
 }
 
 

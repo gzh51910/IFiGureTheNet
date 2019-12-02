@@ -4,16 +4,20 @@ import { Icon} from 'antd'
 import '../css/mycenter.css'
 import Login from './Login'
 class MyCenter extends Component {
-    
-    
+    goto = () =>{
+        let { history } =this.props
+        history.push('./mine')
+    }
     
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         // let phone=/^1[3-9]{9}/
         return (
             <section>
                  <article className='head-wrap'>
-                    < Icon type="left"
+                    < Icon
+                        onClick={this.goto}
+                        type="left"
                         style={{
                             position: 'absolute',
                             left: '.3rem',

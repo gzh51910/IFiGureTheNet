@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
 // import '../css/mine.css'
 import Me from '../component/mine'
+import {
+    connect
+} from 'react-redux'
+//  映射属性（获取）
+const mapStateToProps = (state) => {
+    let {
+        user
+    } = state.common;
+    let phone = user.phone;
+    return {
+        user,
+        phone
+    }
+}
 class Mine extends Component {
     state = {
         Right:"right",
@@ -38,13 +52,15 @@ class Mine extends Component {
     
     render() {
             // console.log(this);
-        let { Right, menu,ip } = this.state
+        let { Right, menu, user,phone} = this.state
         return <Me
             menu={menu} Right={Right}
-            goto={this.goto.bind(this, ip[0])}
-            ip={ip}
+            goto={this.goto.bind(this)}
+            user={user}
+            phone={phone}
             {...this.props}
         ></Me>
     }
 }
+Mine = connect(mapStateToProps)(Mine)
 export default Mine;

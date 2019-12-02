@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
 import '../css/money.css';
-import { Icon,Row, Col,Checkbox,Slider, InputNumber } from 'antd';
+import { Icon, Row, Col, Checkbox, Slider, InputNumber } from 'antd';
+import {
+    connect
+} from 'react-redux'
+//  映射属性（获取）
+const mapStateToProps = (state) => {
+    
+    let {user} = state.common;
+    let phone = user.phone;
+    
+    return {
+        user,
+        phone
+    }
+}
 class Login extends Component {
     constructor(props){
         super(props)
-        this.state = {
-            t:'',
-            t1:'',
-            t2:'',
-            inputValue: 1,
-        }
+        // this.state = {
+        //     phone:[]
+        // }
         this.list=[
             {
                 id:1,
@@ -53,6 +64,9 @@ class Login extends Component {
             },
         ]
     }
+    state = {
+        phone:''
+    }
     onChange1 = value => {
         this.setState({
           inputValue: value,
@@ -64,28 +78,20 @@ class Login extends Component {
     goto=()=>{
         this.props.history.push("/mine")
     }
-    componentDidMount(){
-        let t=localStorage.getItem('1')  
-        let t1=localStorage.getItem('2')  
-        let t2=localStorage.getItem('3')  
+    componentDidMount() {
+        let {phone} = JSON.parse(localStorage.getItem('user'))
+        console.log(phone);
+        
         this.setState({
-                    t,
-                    t1,
-                    t2
-                })
+            phone
+        })
+        
+        
     }
     render() {
-        // console.log(this.state.t,this.state.t1);
-        // let {params}=this.props.location
-        // if(params==undefined){
-        //     params={
-        //         zhanghao:"账号有误",
-        //         ID:"ID有误",
-        //         wotomoney:"我图币有误"
-        //     }
-        // } 
-        const { inputValue } = this.state;
-        // console.log(inputValue);
+        const { inputValue} = this.state;
+        console.log(this.state.phone);
+        
         return (
            <div className="bigBox">
                {/* 头部 */}
@@ -99,8 +105,10 @@ class Login extends Component {
                 </div>
                 {/* 账号显示 */}
                 <div className="hello clearfix margin-none">
-                    <p className="fl"><i>账号：</i><span>{this.state.t.substr(0,7)}...</span><i>({this.state.t1})</i></p>
-                    <p className="fr">当前余额: {this.state.t2}我图币</p>
+                    <p className="fl"><span>
+                        账号：
+                        {this.state.phone}</span></p>
+                    <p className="fr">当前余额: 3我图币</p>
                 </div>
                 {/* 选择充值金额 */}
                 <div className="recharge-box">
@@ -123,7 +131,7 @@ class Login extends Component {
                <div className="couponCondition clearfix">
                     <div className="fr useCoupon">
                     <Row style={{width:"70%",float:"left",height:"100%"}}>
-                        <Col span={12} style={{height:"100%",float:"left",marginTop:"2.5%",marginLeft:"0", width:"2.7rem",border:"0"}}>
+                        <Col span={12} style={{height:"100%",float:"left",marginLeft:"0", width:"2.7rem",border:"0"}}>
                         <Slider
                             min={50}
                             max={60000}
@@ -156,18 +164,21 @@ class Login extends Component {
                 <div className="pay-way">
                     <div className="clearfix pay-way-list">
                         <span className="fl">
-                           <Icon type="crown" theme="twoTone" style={{ fontSize: '16px',marginRight:"0.3rem"}}/>
+                            < Icon type = "alipay-circle" style={{ fontSize: '16px',marginRight:"0.3rem",color:'#13a9ef'}}/>
                            支付宝
                         </span>
                         <span className="check"><Checkbox onChange={this.onChange}></Checkbox></span>
                     </div>
                     <div className="clearfix pay-way-list">
                         <span className="fl">
-                        <Icon type="fire" theme="twoTone" twoToneColor="#0ec5a1" style={{ fontSize: '16px',marginRight:"0.3rem"}}/>
+                            < Icon type="wechat" 
+                                style={{ fontSize: '16px', marginRight: "0.3rem",color:'#0ec5a1' }} />
                             微信</span>
+                        
                         <span className="check1"><Checkbox onChange={this.onChange}></Checkbox></span>
                     </div>
                     <div className="agree">
+                        
                         <p><span>*</span>《消费协议》 注：1元=1我图币</p>
                     </div>
                 </div>
@@ -181,4 +192,5 @@ class Login extends Component {
         )
     }
 }
+Login = connect(mapStateToProps)(Login)
 export default Login;

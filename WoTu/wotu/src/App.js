@@ -13,6 +13,21 @@ import Detail from './pages/Detail'
 import MyCenter from './pages/MyCenter'
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
+import {
+  connect
+} from 'react-redux'
+//  映射属性（获取）
+const mapStateToProps = (state) => {
+  let {
+    user
+  } = state.common;
+  let phone = user.phone;
+  return {
+    user,
+    phone
+  }
+}
+
 class App extends Component{
   state = {
     menu: [
@@ -41,14 +56,16 @@ class App extends Component{
        ]
   }
   goto = ({ key: path }) => {
-        let { history } = this.props;
+    let { history, phone } = this.props;
         this.setState({
             currentPath: path
         })
+    if (path === '/mine' && phone=='') {
+          history.push('/login')
+        }
         history.push(path)
   }
   componentDidMount() {
-    console.log(this.props);
     this.setState({
       currentPath: this.props.location.pathname ? this.props.location.pathname:'./home'
     })
@@ -91,5 +108,6 @@ class App extends Component{
    )
   }
 }
+App = connect(mapStateToProps)(App)
 App = withRouter(App);
 export default App;

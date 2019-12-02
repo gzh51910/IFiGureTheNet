@@ -1,17 +1,36 @@
 import React from 'react'
 import '../css/mine.css'
 import { Button, Icon } from 'antd';
-function Me({ menu, Right, goto, ip,history}) {
+import {
+    connect
+} from 'react-redux'
+//  映射属性（获取）
+const mapStateToProps = (state) => {
+    // console.log(state);
+    
+    let {
+        user
+    } = state.common;
+    let phone = user.phone;
+    return {
+        user,
+        phone
+    }
+}
+
+function Me({ menu, Right, goto, phone,user,history}) {
     function logout() {
-        history.push('/mycenter')
+        // console.log(props);
+        
+        // history.push('/mycenter')
     }
         return (
             <section className='warp'>
                 <article className='head'>
                     <article className='message'>
                         <article className='ID'>
-                        <p>{ip[0].zhanghao}</p>
-                        <p>{ip[0].ID}</p>
+                        <p>{phone}</p>
+                        <p>{'ID:'+user._id}</p>
                         </article>
                         <article className='pic'>
                             {/* <img src="../img/TX.jpg"/> */}
@@ -62,5 +81,5 @@ function Me({ menu, Right, goto, ip,history}) {
             </section>
         )
     }
-
+Me = connect(mapStateToProps)(Me)
 export default Me;
