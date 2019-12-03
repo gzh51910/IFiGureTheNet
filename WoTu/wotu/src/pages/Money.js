@@ -99,8 +99,8 @@ class Login extends Component {
                 </div>
                 {/* 账号显示 */}
                 <div className="hello clearfix margin-none">
-                    <p className="fl"><i>账号：</i><span>{this.state.t.substr(0,7)}...</span><i>({this.state.t1})</i></p>
-                    <p className="fr">当前余额: {this.state.t2}我图币</p>
+                    <p className="fl"><i>账号：</i><span>{}...</span><i>({this.state.t1})</i></p>
+                    <p className="fr">当前余额: {}我图币</p>
                 </div>
                 {/* 选择充值金额 */}
                 <div className="recharge-box">
