@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
 // import '../css/mine.css'
 import Me from '../component/mine'
-import {
-    connect
-} from 'react-redux'
+import UserAction from '../store/action/common'
+import {connect} from 'react-redux'
 //  映射属性（获取）
 const mapStateToProps = (state) => {
-    let {
-        user
-    } = state.common;
+    let {user} = state.common;
     let phone = user.phone;
-    return {
-        user,
-        phone
-    }
+    return { user, phone }
 }
+const {logout} =UserAction;
 class Mine extends Component {
+    
+    
+  
     state = {
         Right:"right",
         menu: [
@@ -48,17 +46,23 @@ class Mine extends Component {
             params:ip
         })
     }
-
+  logout = () => {
+      this.props.dispatch(logout())
+      localStorage.removeItem('user')
+      this.props.history.push('/mycenter')
+  }
     
     render() {
-            // console.log(this);
+
         let { Right, menu, user,phone} = this.state
         return <Me
             menu={menu} Right={Right}
             goto={this.goto.bind(this)}
             user={user}
             phone={phone}
+            logout={this.logout}
             {...this.props}
+            
         ></Me>
     }
 }

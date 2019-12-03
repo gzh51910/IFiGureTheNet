@@ -85,7 +85,7 @@ section {
 }
 
 .btnA {
-    width: 3.2rem;
+    /* width: 3.2rem; */
     background: #0cc59e;
     border: 0;
     color: #fff;

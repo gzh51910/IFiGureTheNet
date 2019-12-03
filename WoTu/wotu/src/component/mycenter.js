@@ -1,11 +1,39 @@
 import React from 'react'
 import '../css/mycenter.css'
-import {Tabs,Radio} from 'antd'
+import {Tabs,Radio,Form,Icon,Input,Button} from 'antd'
+import Reg from '../pages/Reg';
 const { TabPane } = Tabs;
-function MYC() {
+
+class MYC extends React.Component{
+    
+     handleSubmit = e => {
+    e.preventDefault();
+    this.props.form.validateFields(async(err, values) => {
+        let { phone, password} = values    
+//       if (!err) {
+//         let {data} = await axios.get("http://localhost:8011/login", {params:{ phone, password}
+//          
+//         })
+//         //   console.log(data);
+//         if(data.status==1){
+//           let user=data.data[0];
+//          let { dispatch } = this.props;
+//           dispatch(login(user))
+//           localStorage.setItem('user',JSON.stringify(user));
+//           this.props.history.push('/mine')
+//         } else {
+//             alert("用户名或者密码错误！")
+// }
+//     }
+    });
+    };
+    render() {
+        // console.log(this);
+        
+    //   const { getFieldDecorator } = this.props.form;
     return (
         <section
-            style={{ display: 'brock' }}
+            // style={{ display:dis }}
         >
                 <article>
                     <Tabs
@@ -22,7 +50,7 @@ function MYC() {
                                         <span className='Span'>QQ账号直接登录</span>
                                 </article>
                             <article
-                                // onClick={login}
+                                // onClick={goto('/')}
                             >
                                     < article className = 'Wotu'/>
                                     < span className = 'Span'> 我图网账号登录 </span>
@@ -31,39 +59,13 @@ function MYC() {
                         </TabPane>
 
                         <TabPane tab="注册" key="2">
-                            <article className='Reg'>
-                                <form>
-                                    <input placeholder="请输入手机号码"
-                                        ref={input =>input = input}
-                                       style={{
-                                            width: '100%', height: '0.9rem',
-                                            borderRadius: '0.15rem', paddingLeft: "0.1rem",
-                                            margin:'0.5rem 0 0.3rem'
-                                        }}
-                                />
-                                    <input
-                                    style={{
-                                            width: '100%', height: '0.9rem',
-                                            borderRadius: '0.15rem', paddingLeft: "0.1rem", marginBottom: '0.3rem'
-                                        }}
-                                    />
-                                    < article className = "verification-wrap" >
-                                        <input placeholder='请输入验证码' className='verification'></input>
-                                        <button className='btnA'>免费获取验证码</button>
-                                    </article>
-                                    <article style={{marginBottom: '0.3rem',marginLeft:'-2.4rem'}}>
-                                        <Radio>同意《须知声明》&nbsp;《版权声明》</Radio>
-                                    </article>
-                                    <button className='btnB'>立即注册</button>
-                                </form>
-                            </article>
-                          
+                            */}
                         </TabPane>
-                    </Tabs>,
+                    </Tabs>
                 </article>
             </section>
         )
-    
+    }
 }
-
+    
 export default MYC;

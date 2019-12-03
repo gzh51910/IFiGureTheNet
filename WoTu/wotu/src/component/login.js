@@ -1,11 +1,13 @@
 
 import React,{Component} from 'react';
-import { Form, Icon, Input, Button,Tabs } from 'antd';
+import { Form, Icon, Input, Button,Tabs,Radio} from 'antd';
 import '@babel/plugin-proposal-decorators'
 import {Redirect,withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
-import UserAction from '../store/action/common'
+import UserAction, { LOGIN } from '../store/action/common'
 import axios from 'axios'
+import '../css/mycenter.css'
+
 const { TabPane } = Tabs;
 
 const {login} =UserAction;
@@ -18,14 +20,10 @@ const mapStateToProps = (state)=>{
       phone
   }
 }
-//  映射方法（修改操作）
-// const mapDispatchToProps = (dispatch)=>{
-//   return {
-//     dispatch
-//   }
-// }
-// connect((mapStateToProps,mapDispatchToProps))
-class LogIn extends Component{
+class LogIn extends Component{
+    state = {
+        // : false
+    }
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields(async(err, values) => {
@@ -46,28 +44,36 @@ class LogIn extends Component{
 }
     }
     });
-  };
-  constructor(props){
-    super(props);
-    this.goBack=this.goBack.bind(this);
-}
-  goBack(){
+    };
+    
+    Reg = (e) => {
+
+        e.preventDefault();
+        let phone=this.phone.state.value
+        let password = this.password.state.value
+        console.log(this.value);
+        // if (this.state.checked === false) {
+        //     alert('请先勾选同意《须知声明》和《版权声明》')
+        //     return;
+        // }
+        // axios.post("http://localhost:8011/reg", { phone, password})
+        // alert('注册成功')
+        // this.props.history.push('/mine')
+        
+        
+  }
+  goBack=()=>{
+    
     this.props.history.push('/home')
   }
-//   handleLogin(){ 
-
-//     this.props.login(this.props.state)
-// }
   render() {
-
-    const { getFieldDecorator } = this.props.form;
+      const { getFieldDecorator } = this.props.form;
       return (
         
           <Tabs defaultActiveKey="1"
               style={{textAlign:'center'}}
-            //   onChange={callback}
           >
-            <TabPane tab="账号登录" key="1">
+            <TabPane tab="登录" key="1">
                   <Form onSubmit={this.handleSubmit} style={{ padding: '0 0.5rem' }}>
                       <Form.Item>
                         {
@@ -94,18 +100,6 @@ class LogIn extends Component{
                          />
                           )}
                       </Form.Item>
-                   
-            {/*        <Form.Item>
-                           { getFieldDecorator('verification', {
-                                rules: [{ required: true, message: '请输入验证码！' }],
-                            })(
-                        <Input
-                            style={{height:'0.9rem',marginLeft:'-3.5rem',width:'50%'}}
-                            placeholder="请输入验证码"
-                        />
-                          )}
-                      </Form.Item> */}
-
                     <Form.Item >
                             <Button type="" htmlType="submit" ref='sub'
                                 style={{
@@ -119,43 +113,51 @@ class LogIn extends Component{
                   </Form>
                
             </TabPane>
-            <TabPane tab="手机快速登录" key="2">
-               <Form onSubmit={this.handleSubmit} style={{ padding: '0 0.5rem' }}>
+            <TabPane tab="注册" key="2">
+                  <Form
+                      style={{ padding: '0 0.5rem' }}>
                       <Form.Item>
-                        {
-                        getFieldDecorator('phone', {
-                        rules: [{ required: true,message: '请输入手机号码！'},
-                            { pattern: /^1[3-9]\d{9}$/, message: '手机号格式错误！'}],
-                        })(
                         <Input
                           style={{height:'0.9rem'}}
                           prefix={<Icon type="user" />}
-                          placeholder="请输入手机号码"
+                          placeholder="请输入手机号码"
+                          ref={input => this.phone = input}
                         />
-                      )}
+
                       </Form.Item>
-                      <Form.Item>
-                           { getFieldDecorator('password', {
-                                rules: [{ required: true, message: '请输入密码！' }],
-                            })(
+                       <Form.Item>
                         <Input
-                            style={{height:'0.9rem',marginLeft:'-0.24rem'}}
+                            style={{height:'0.9rem'}}
                             prefix={<Icon type="lock" />}
                             type="password"
-                            placeholder="请输入密码"
+                            placeholder="请输入密码"
+                            ref={input => this.password = input}
                          />
-                          )}
                       </Form.Item>
-                   
+                      <Form.Item>
+                          < article className = "verification-wrap" >
+                            <input placeholder='请输入验证码' className='verification'></input>
+                            <button className='btnA'>免费获取验证码</button>
+                        </article>
+                      </Form.Item>
+                      <article>
+                          < Radio
+                              
+                            //   checked={this.state.checked}
+                            //   defaultChecked={false}
+                              style={{ marginLeft: '-1.5rem' }}>同意《须知声明》&nbsp;《版权声明》</Radio>
+                      </article>
 
                     <Form.Item >
-                            <Button type="" htmlType="submit" ref='sub'
+                          <Button type="" htmlType="submit"
+                              onClick={this.Reg}
                                 style={{
                                     width: '100%', height: '0.9rem',
                                     background: '#0cc59e', color: '#fff',
-                                    fontSize:'0.3rem'
+                                    fontSize: '0.3rem'
+                                    
                                 }}>
-                        立即登录
+                        立即注册
                       </Button>
                     </Form.Item>
                   </Form>

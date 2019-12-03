@@ -8,7 +8,7 @@
     background: #0cc59e;
     display: flex;
     align-items: center;
-
+    /* display: block; */
 }
 .message{
     width: 100%;
@@ -25,12 +25,12 @@
     line-height: .1rem;
     align-self:center;
 }
-.pic{
+.pic img{
     width: 1.08rem;
     height: 1.08rem;
     border-radius: 50%;
     /* background: red; */
-    background: url(../img/TX.jpg);
+    /* background: url(require{../img/TX.jpg}); */
     background-size: 1.08rem 1.08rem;
 }
 .account{

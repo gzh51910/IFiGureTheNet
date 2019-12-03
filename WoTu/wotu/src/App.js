@@ -56,12 +56,15 @@ class App extends Component{
        ]
   }
   goto = ({ key: path }) => {
-    let { history, phone } = this.props;
+    let { history, phone, user } = this.props;
+      console.log( path);
+      console.log(this.props);
+      
         this.setState({
             currentPath: path
         })
-    if (path === '/mine' && phone=='') {
-          history.push('/login')
+    if (path === '/mine') {
+
         }
         history.push(path)
   }

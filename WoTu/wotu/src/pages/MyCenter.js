@@ -4,14 +4,19 @@ import { Icon} from 'antd'
 import '../css/mycenter.css'
 import Login from './Login'
 class MyCenter extends Component {
+    state = {
+        dis:'none'
+    }
     goto = () =>{
         let { history } =this.props
         history.push('./mine')
     }
     
     render() {
-        // console.log(this.props);
-        // let phone=/^1[3-9]{9}/
+        let {dis}=this.state
+
+        // console.log(dis);
+        
         return (
             <section>
                  <article className='head-wrap'>

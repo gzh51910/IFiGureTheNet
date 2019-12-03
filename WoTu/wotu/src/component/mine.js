@@ -18,12 +18,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-function Me({ menu, Right, goto, phone,user,history}) {
-    function logout() {
-        // console.log(props);
-        
-        // history.push('/mycenter')
-    }
+function Me({ menu, Right, goto, phone, user,history,logout }) {
+
+  
         return (
             <section className='warp'>
                 <article className='head'>
@@ -33,7 +30,7 @@ function Me({ menu, Right, goto, phone,user,history}) {
                         <p>{'ID:'+user._id}</p>
                         </article>
                         <article className='pic'>
-                            {/* <img src="../img/TX.jpg"/> */}
+                            <img src={require('../img/TX.jpg')}/>
                         </article>
                     </article>
                 </article>
