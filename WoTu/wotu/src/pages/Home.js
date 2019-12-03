@@ -2,167 +2,14 @@
 import React, { Component } from 'react'
 import '../css/home.css';
 import {Icon,Carousel,Card } from 'antd';
+import axios from 'axios';
 const { Meta } = Card;
 class Home extends Component{
     state = {
-        datalist:[
-                    {
-                        "title":1,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":2,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":3,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":4,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":5,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":6,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":7,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":8,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":9,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    },
-                    {
-                        "title":10,
-                        "src" : "https://img.wotucdn.com/tubi_home/2019-11-28/1a56e08e80c50bc607e09d56d9c40b29.png"
-                    }
-        ],
-        list:[
-            {
-                "num":"1",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/c631c16d08de1e0ddafb43341bc795f6.png",
-                "title":"装饰画",
-                "href":"//m.ooopic.com/home-35--.html"
-            },
-            {
-                "num":"2",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/5a3be181510029e7ce8801983afb5e37.png",
-                "title":"背景墙",
-                "href":"//m.ooopic.com/home-70--.html"
-            },
-            {
-                "num":"3",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/e9ea3855a7a948bc0c0c4c7f03f9c93d.png",
-                "title":"地面吊顶",
-                "href":"//m.ooopic.com/home-12--.html"
-            },
-            {
-                "num":"4",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/e5209bd91d7e93d66582c427901be12c.png",
-                "title":"平面展板",
-                "href":"//m.ooopic.com/home-41--.html"
-            },
-            {
-                "num":"5",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/af7a2db17f161e2b4c3c32d9992c2102.png",
-                "title":"手抄报",
-                "href":"//m.ooopic.com/home-117--.html"
-            },
-            {
-                "num":"6",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/bbb3641a7644e3c17c183f7522461f5e.png",
-                "title":"视频音效",
-                "href":"//m.ooopic.com/phome-4-.html"
-            },
-            {
-                "num":"7",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/d7bbf7a0014de316c00bea61e9c7d729.png",
-                "title":"办公创意",
-                "href":"https://ppt.ooopic.com/"
-            },
-            {
-                "num":"8",
-                "src":"https://img.wotucdn.com/tubi_home/2019-09-12/bbb3641a7644e3c17c183f7522461f5e.png",
-                "title":"VIP专区",
-                "href":"https://m.ooopic.com/vip/"
-            }
-        ],
-        list1:[
-            {
-                "num1":"1",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"2",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"3",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"4",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"5",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"6",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"7",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-            {
-                "num1":"8",
-                "src":"http://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg",
-            },
-        ],
-        list2:[
-            {
-                "num2":"1",
-                "sb":"11",
-                "type1":"contacts",
-                "title1":"装饰画/玄关装饰",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-            {
-                "num2":"2",
-                "sb":"12",
-                "type1":"contacts",
-                "title1":"装饰画/玄关装饰",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-            {
-                "num2":"3",
-                "sb":"13",
-                "type1":"contacts",
-                "title1":"装饰画/玄关装饰",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-        ]
+        datalist:[],
+        list:[],
+        list2:[],
+        list3:[]
     }
     gotoGoods=(id)=>{
         this.props.history.push(`/goods/${id}`)
@@ -174,7 +21,42 @@ class Home extends Component{
             params:id
         })
     }
-    render() {
+    async componentDidMount(){
+        let {data:{data}} = await axios.get("http://localhost:8011/goods/find");
+        let data2 = await axios.get("http://localhost:8011/goods/find2");
+        let data3 = await axios.get("http://localhost:8011/goods/find3");
+        let data4 = await axios.get("http://localhost:8011/goods/find4");
+        let arr = [];
+        let arr1 = [];
+        let arr2 = [];
+        data.forEach(item=>{
+        arr.push(item.img)
+        })
+        for(var i=0;i<arr.length;i++){
+            arr[i]=require('../img'+arr[i])
+        }
+        data2.data.data.forEach(item=>{
+            arr1.push(item.imgUrl)
+            })
+        for(var i=0;i<arr1.length;i++){
+            arr1[i]=require('../img/lunbo/'+arr1[i])
+        }
+        data4.data.data.forEach(item=>{
+            arr2.push(item)
+            })
+        for(var i=0;i<arr2.length;i++){
+            let a=arr2[i].imgUrl
+            arr2[i].imgUrl = require('../img/homeImg/'+ a)
+        }
+        this.setState({
+            list3:arr,
+            datalist:arr1,
+            list2:data3.data.data,
+            list:arr2,
+        })
+        };
+        
+    render() {    
         return (
                 <div className="home_box">
                     {/* 头部 */}
@@ -191,9 +73,9 @@ class Home extends Component{
                     <Carousel autoplay>
                     {
                         this.state.datalist.map(item => {
-                            return <div key={item.title}>
+                            return <div key={item}>
                                 {
-                                   <img  src={item.src} />
+                                   <img  src={item} />
                                 }
                             </div>
                         })
@@ -203,8 +85,8 @@ class Home extends Component{
                     <div className="index-classify">
                         {
                         this.state.list.map(item => {
-                            return <a onClick={this.gotoGoods.bind(this,4)} key={item.num} className="fl classify-box">
-                           <div className="classify"><img src={item.src}></img></div>
+                            return <a onClick={this.gotoGoods.bind(this,4)} key={item._id} className="fl classify-box">
+                           <div className="classify"><img src={item.imgUrl}></img></div>
                         <p>{item.title}</p>
                             </a>
                         })
@@ -219,38 +101,38 @@ class Home extends Component{
                     <div className="subject-box">
                         <ul className="subject-box-ul">
                             {
-                                this.state.list1.map(item => {
-                                    return <li className="subject-box-li" key={item.num1}>
-                                    <img src={item.src} onClick={this.gotoGoods.bind(this,3)} />
+                                this.state.list3.map(item => {
+                                    return <li className="subject-box-li" key={item} >
+                                    <img src={item} onClick={this.gotoGoods.bind(this,3)} />
                                  </li>
                                 })
                            }
                         </ul>
                     </div>
                     {/* 首页分类 */}
-                    <div className="lei">
+                    <div className="lei" style={{marginBottom:"1rem"}}>
                       {
                           this.state.list2.map(item=>{
-                              return   <div className="special-subject" key={item.num2}>
+                              return   <div className="special-subject" key={item._id}>
                                         <div className="title-box clearfix">
-                                        <span className="fl"><Icon type={item.type1} theme="twoTone" twoToneColor="#238e68"/>~~{item.title1}</span>
+                                        <span className="fl"><Icon type={item.type1} theme="twoTone" twoToneColor="#238e68"/>~~{item.title_T}</span>
                                         </div>
                                         {/* 图片加文字 */}
                                         <div className="cart_c">
                                         <Card
                                             style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
-                                            cover={<img alt="example" src={item.src_L} onClick={this.gotoGoods.bind(this,1)}/>}>
-                                            <Meta title={item.title2} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,1)}/>
+                                            cover={<img  alt="example" src={item.src_L} onClick={this.gotoGoods.bind(this,1)}/>}>
+                                            <Meta title={item.title_L} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,1)}/>
                                         </Card>
                                         <Card
                                             style={{width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
-                                            cover={<img alt="example" src={item.src_R}onClick={this.gotoGoods.bind(this,2)}/>}>
-                                            <Meta title={item.title3} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,2)}/>
+                                            cover={<img  alt="example" src={item.src_R}onClick={this.gotoGoods.bind(this,2)}/>}>
+                                            <Meta title={item.title_R} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,2)}/>
                                         </Card>
                                         </div>
                                         {/* 更多 */}
                                         <div className="more-work">
-                                            <a onClick={this.gotoList.bind(this,item.sb)}>更多分类
+                                            <a onClick={this.gotoList.bind(this,item.num)}>更多分类
                                             <Icon type="right-circle" theme="twoTone"  twoToneColor="#007fff"/>
                                             </a>
                                         </div>

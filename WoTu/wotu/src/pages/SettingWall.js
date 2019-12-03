@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import '../css/SettingWall.css'
 import {Icon,Row,Col,Upload, message} from "antd";
-// import 'antd'
-// import 'antd/dist/antd.css';
+import axios from 'axios';
 
 
 function getBase64(img, callback) {
@@ -28,9 +27,15 @@ class SettingWall extends Component {
         super(props)
         this.state={
             loading:false,
+            list3:[]
         }
     }
-    
+    async componentDidMount(){
+      let {data:{data}} = await axios.get("http://localhost:8011/goods/find1");
+      this.setState({
+          list3:data
+      })
+      }
     handleChange = info => {
         if (info.file.status === 'uploading') {
           this.setState({ loading: true });
@@ -82,21 +87,25 @@ class SettingWall extends Component {
                     </div>
                 </div>
                 <div className="set-clear"></div>
-                <div className="set-main-one">
+                {
+                  this.state.list3.map(item=>{
+                    return <div className="set-main-one" key={item.text}>
                     <div className="set-main-top-text">
-                        <span>电视照片墙</span><span>查看更多></span>
+                  <span>{item.text}</span><span>查看更多></span>
                     </div>
                     <div className="set-main-top-img">
-                        <div className="set-main-top-img-one">
-                            <img src="https://bpic.wotucdn.com/16/45/51/16455137-2535580d7227bb0c94f54ede5c76c789.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x480a0a0/format/webp" />
-                            <p>简约爵士白大理石艺术...</p>
-                        </div>
-                        <div className="set-main-top-img-two">
-                            <img src="https://bpic.wotucdn.com/16/45/51/16455137-2535580d7227bb0c94f54ede5c76c789.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x480a0a0/format/webp" />
-                            <p>欧式奢华大理石艺术电...</p>
-                        </div>
+                       <div className="set-main-top-img-one">
+                          <img src={require('../img'+item.img)} />
+                  <p>{item.title}</p>
+                      </div>
+                      <div className="set-main-top-img-one1">
+                      <img src={require('../img'+item.img1)} />
+                  <p>{item.title1}</p>
+                      </div>
                     </div>
                 </div>
+                  })
+                }
 
 
               
