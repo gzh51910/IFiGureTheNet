@@ -29,7 +29,7 @@ function Me({ menu, Right, goto, phone, user,history,logout }) {
                         <p>{phone}</p>
                         <p>{'ID:'+user._id}</p>
                         </article>
-                        <article className='pic'>
+                        <article className='Pic'>
                             <img src={require('../img/TX.jpg')}/>
                         </article>
                     </article>
