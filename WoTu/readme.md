@@ -24,20 +24,42 @@
 ```
 ## 项目页面截图
 
-* 登录页：
-* ![Image text](https://github.com/gzh51910/ChaWo/blob/dev/ChaWo/chawomanage/src/picture/d144d3bacac97513840bc5ec13fcf23.png)
-* 数据管理页：
-* ![Image text](https://github.com/gzh51910/ChaWo/blob/dev/ChaWo/chawomanage/src/picture/24f27641a7eeb934057e08139aa62b6.png)
+* 首页：
+* ![Image text](./image/home.png)
+* 分类：
+* ![Image text](./image/classification.png)
+* 背景墙：
+* ![Image text](./image/背景墙.png)
+* 我的：
+* ![Image text](./image/mine.png)
+* 登录：
+* ![Image text](./image/login.png)
+* 注册：
+* ![Image text](./image/reg.png)
+* 商品详情：
+* ![Image text](./image/goods.png)
+* 商品列表：
+* ![Image text](./image/商品列表.png)
+* 后台：
+* ![Image text](./image/Background1.png)
+* 后台：
+* ![Image text](./image/后台1.png)
 
 ## 项目目录说明
 
-├─wotu                  项目文件夹
-    ├─public
-    └─src
+├─WoTu                  项目文件夹
+    ├─image             页面截图
+    |
+    ├─serverApi         服务器
+        ├─db            连接服务器文件
+        ├─routers       后台接口
+        ├─utils         工具
+    |
+    └─wotu              app前端文件夹
         ├─component     封装的组件
         ├─css           页面样式
-        ├─image         //logo
-        ├─pages         //页面
-        ├─picture       //页面截图
+        ├─pages         页面
+        ├─store         redux 存放共享的数据
         ├─routers       //路由
         └─utils         //token
+      

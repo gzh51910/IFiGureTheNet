@@ -1,0 +1,26 @@
+[
+    {
+        "name":"韦云洪",
+        "password":"123456",
+        "sex":"男",
+        "position":"菜鸟攻城狮"
+    },
+    {
+        "name": "董伟东",
+        "password": "123456",
+        "sex": "男",
+        "position": "懂事长"
+    },
+    {
+        "name": "吕紫薇",
+        "password": "123456",
+        "sex": "女",
+        "position": "总裁"
+    },
+    {
+        "name": "周石坤",
+        "password": "123456",
+        "sex": "女",
+        "position": "副总裁"
+    }
+]
