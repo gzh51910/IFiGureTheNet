@@ -30,6 +30,7 @@ const mapStateToProps = (state) => {
 
 class App extends Component{
   state = {
+    currentPath:"",
     menu: [
       {
            name: 'home',
@@ -56,13 +57,16 @@ class App extends Component{
        ]
   }
   goto = ({ key: path }) => {
-    let { history, phone, user } = this.props;
+    let { history,user } = this.props;
       // console.log( path);
       // console.log(this.props);
       
         // this.setState({
         //     currentPath: path
         // })
+        this.setState({
+            currentPath: path
+        })
     if (path === '/mine') {
 let a=localStorage.getItem("user")
 // localStorage.setItem()
@@ -72,11 +76,13 @@ if(a==null){
         }
         history.push(path)
   }
-  // componentDidMount() {
-  //   this.setState({
-  //     currentPath: this.props.location.pathname ? this.props.location.pathname:'./home'
-  //   })
-  // }
+  componentDidMount() {
+    console.log(this.props.history.location.pathname);
+    
+    this.setState({
+      currentPath: this.props.history.location.pathname ? this.props.history.location.pathname : './home'
+    })
+  }
   
   render() {
     return (
@@ -98,14 +104,21 @@ if(a==null){
           </Switch> 
        <Menu
             onClick={this.goto}
-            // selectedKeys={this.state.currentPath}
-            mode="horizontal"
+            selectedKeys={this.state.currentPath}
+          mode="horizontal"
+          style={{borderTop:'1px solid #e8e8e8'}}
         >
             {
                 this.state.menu.map(item => {
-                return  <Menu.Item key={item.path}>
-                          <Icon type={item.icon}/>
-                          {item.text}
+                  return <Menu.Item key={item.path}
+                        style={{   display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                // flexDirection:'column'
+                        }}
+                  >
+                         <Icon type={item.icon}/>
+                         {item.text}
                      </Menu.Item>
                 })
         }

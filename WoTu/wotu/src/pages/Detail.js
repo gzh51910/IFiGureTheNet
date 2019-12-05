@@ -78,7 +78,14 @@ class Reg extends Component {
     }
     gotoHome=()=>{
         this.props.history.push("/home")
-            }
+  }
+  collection = () => {
+    let { params } = this.props.location;
+    let pic = params[0]
+    let title = params[1]
+    console.log(pic,title);
+    
+    }
     render() {
         let {params}=this.props.location
         console.log(params[0]);
@@ -158,7 +165,7 @@ class Reg extends Component {
                         <Icon type="home"style={{ fontSize: '20px', color: '#999',marginTop:"0.15rem" }}/><br/>
                             <span>首页</span>
                         </a>
-                        <a className="join-coll fl">加入收藏</a>
+                        <a className="join-coll fl" onClick={this.collection}>加入收藏</a>
                         <a className="join-download fl">立即下载</a>
                     </div>
                 </div>

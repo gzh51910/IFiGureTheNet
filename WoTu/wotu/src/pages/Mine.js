@@ -12,8 +12,6 @@ const mapStateToProps = (state) => {
 const {logout} =UserAction;
 class Mine extends Component {
     
-    
-  
     state = {
         Right:"right",
         menu: [
@@ -30,13 +28,6 @@ class Mine extends Component {
             }, {
                 name: '邮箱设置',
                 icon:"mail"
-            }
-        ],
-        ip:[
-            {
-                zhanghao:19128662457,
-                ID:"ID:12345678",
-                wotomoney:"0我图币"
             }
         ]
     }
@@ -55,7 +46,7 @@ class Mine extends Component {
     render() {
 
         let { Right, menu, user,phone} = this.state
-        return <Me
+        return  <Me
             menu={menu} Right={Right}
             goto={this.goto.bind(this)}
             user={user}

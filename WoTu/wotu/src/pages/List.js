@@ -9,7 +9,7 @@ const { TabPane } = Tabs;
 class List extends Component{
     constructor(props) {
         super(props);
-        console.log(this.props.location.params);
+        // console.log(this.props.location.params);
       }
       handleModeChange = e => {
         const mode = e.target.value;
@@ -50,7 +50,7 @@ class List extends Component{
         };
     render() {
         const { mode,menu } = this.state;    
-        console.log("wert",typeof this.props.location.params);
+        // console.log("wert",typeof this.props.location.params);
         return (
             <section style={{width:"100%",height:"100%"}}>
                 <article className = 'Search-warp' >
