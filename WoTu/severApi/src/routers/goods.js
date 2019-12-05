@@ -308,30 +308,20 @@ Router.patch('/update/:id', async(req, res) => {
         id
     } = req.params;
     let {
-        dwd,
-        gc_name,
-        brad_name,
-        ImgMin,
-        Title,
-        Price,
-        Juan,
-        Xl,
-        brand_id,
-        nb
+        num,
+        key,
+        name,
+        price,
+        time
     } = req.body;
-    let result = await mongodb.Update('GoodsAll', {
+    let result = await mongodb.Update('OsaUser', {
         _id: id
     }, {
-        dwd,
-        gc_name,
-        brad_name,
-        ImgMin,
-        Title,
-        Price,
-        Juan,
-        Xl,
-        brand_id,
-        nb
+        num,
+        key,
+        name,
+        price,
+        time
     });
 
     if (result.modifiedCount > 0) {

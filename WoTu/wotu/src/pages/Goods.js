@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../css/goods.css';
-import {Icon,Menu, Dropdown,Tabs } from 'antd';
+import {Icon,Menu, Dropdown,Tabs,Card } from 'antd';
 const { TabPane } = Tabs;
+const { Meta } = Card;
 function callback(key) {
     // console.log(key);
   }
@@ -57,14 +58,46 @@ class Login extends Component {
             </div>
             {/* Tab选项卡 */}
             <div className="Tab_tab">
-            <Tabs defaultActiveKey="1" onChange={callback}>
-                <TabPane tab="综合排序" key="1">
-                Content of Tab Pane 1
+            <Tabs defaultActiveKey="1" onChange={callback} style={{width:"100%"}}>
+                <TabPane tab="综合排序" key="1" style={{width:"100%"}}>
+                   {/* 图片加文字 */}
+                   <div className="cart_c2">
+                                        <Card
+                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        <Card
+                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        <Card
+                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        <Card
+                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        <Card
+                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        <Card
+                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
+                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                        </Card>
+                                        </div>
                 </TabPane>
-                <TabPane tab="最新上传" key="2">
+                <TabPane tab="最新上传" key="2" style={{width:"100%"}}>
                 Content of Tab Pane 2
                 </TabPane>
-                <TabPane tab="最多下载" key="3">
+                <TabPane tab="最多下载" key="3" style={{width:"100%"}}>
                 Content of Tab Pane 3
                 </TabPane>
             </Tabs>

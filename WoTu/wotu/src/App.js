@@ -60,9 +60,9 @@ class App extends Component{
       // console.log( path);
       // console.log(this.props);
       
-        this.setState({
-            currentPath: path
-        })
+        // this.setState({
+        //     currentPath: path
+        // })
     if (path === '/mine') {
 let a=localStorage.getItem("user")
 // localStorage.setItem()
@@ -72,11 +72,11 @@ if(a==null){
         }
         history.push(path)
   }
-  componentDidMount() {
-    this.setState({
-      currentPath: this.props.location.pathname ? this.props.location.pathname:'./home'
-    })
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     currentPath: this.props.location.pathname ? this.props.location.pathname:'./home'
+  //   })
+  // }
   
   render() {
     return (
@@ -98,7 +98,7 @@ if(a==null){
           </Switch> 
        <Menu
             onClick={this.goto}
-            selectedKeys={this.state.currentPath}
+            // selectedKeys={this.state.currentPath}
             mode="horizontal"
         >
             {
