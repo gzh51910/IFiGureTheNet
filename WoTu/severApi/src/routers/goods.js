@@ -99,7 +99,6 @@ Router.post('/add', async (req, res) => {
         }))
     }
 })
-<<<<<<< HEAD
 
 
 
@@ -143,13 +142,6 @@ Router.patch('/update/:id', async(req, res) => {
 
     if (result.modifiedCount > 0) {
         res.send(formatData())
-=======
-Router.post('/addb', async (req, res) => {
-    let { pic, title } = req.body;
-    let result = await mongodb.Create('collection', { pic, title })
-    if (result.insertedCount > 0) {
-        res.send(formatData());
->>>>>>> 2fa534d07aa4ab593a148a1f2ffa6c7b0854e735
     } else {
         res.send(formatData({
             status:0

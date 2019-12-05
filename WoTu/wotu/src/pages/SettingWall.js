@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/SettingWall.css'
-import {Icon,Row,Col,Upload, message} from "antd";
+import {Icon,Upload, message} from "antd";
 import axios from 'axios';
 
 

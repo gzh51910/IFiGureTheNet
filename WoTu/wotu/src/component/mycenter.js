@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/mycenter.css'
-import {Tabs,Radio,Form,Icon,Input,Button} from 'antd'
+import {Tabs} from 'antd'
 import Reg from '../pages/Reg';
 const { TabPane } = Tabs;
 
@@ -9,7 +9,7 @@ class MYC extends React.Component{
      handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields(async(err, values) => {
-        let { phone, password} = values    
+        // let { phone, password} = values    
 //       if (!err) {
 //         let {data} = await axios.get("http://localhost:8011/login", {params:{ phone, password}
 //          

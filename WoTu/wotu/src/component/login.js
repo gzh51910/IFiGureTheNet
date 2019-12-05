@@ -21,9 +21,6 @@ const mapStateToProps = (state)=>{
   }
 }
 class LogIn extends Component{
-    state = {
-        // : false
-    }
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields(async(err, values) => {
@@ -44,9 +41,7 @@ class LogIn extends Component{
               localStorage.setItem('Authorization', Authorization)
               this.props.history.push('/mine')
           }
-      } else {
-          
-        }
+      } 
         
     });
     };
@@ -147,9 +142,6 @@ class LogIn extends Component{
                       </Form.Item>
                       <article>
                           < Radio
-                              
-                            //   checked={this.state.checked}
-                            //   defaultChecked={false}
                               style={{ marginLeft: '-1.5rem' }}>同意《须知声明》&nbsp;《版权声明》</Radio>
                       </article>
 
