@@ -99,11 +99,57 @@ Router.post('/add', async (req, res) => {
         }))
     }
 })
+<<<<<<< HEAD
+
+
+
+
+/* --------------------------------------------------------------------------------------------- */
+//列表页查询数据接口--左侧列表数据
+Router.get('/classify', async(req, res) => {
+    // mongodb查询数据库（1）
+    let data = await mongodb.Find('列表左侧', {});
+    res.send(formatData({
+        data
+    }))
+})
+
+
+
+/* --------------------------------------------------------------------------------------------- */
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+//列表页修改商品数据接口--
+Router.patch('/update/:id', async(req, res) => {
+    let {
+        id
+    } = req.params;
+    let {
+        num,
+        key,
+        name,
+        price,
+        time
+    } = req.body;
+    let result = await mongodb.Update('OsaUser', {
+        _id: id
+    }, {
+        num,
+        key,
+        name,
+        price,
+        time
+    });
+
+    if (result.modifiedCount > 0) {
+        res.send(formatData())
+=======
 Router.post('/addb', async (req, res) => {
     let { pic, title } = req.body;
     let result = await mongodb.Create('collection', { pic, title })
     if (result.insertedCount > 0) {
         res.send(formatData());
+>>>>>>> 2fa534d07aa4ab593a148a1f2ffa6c7b0854e735
     } else {
         res.send(formatData({
             status:0

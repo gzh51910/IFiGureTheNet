@@ -103,6 +103,10 @@
     overflow-x: hidden;
 }
 
+.list_tab::-webkit-scrollbar {
+    display: none
+}
+
 .ant-tabs .ant-tabs-left-bar {
     width: 25%;
 }
