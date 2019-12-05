@@ -96,7 +96,7 @@ if(a==null){
               <Route path="/login" component={Login}/>
               <Route path="/detail" component={Detail}/>
               <Route path="/mycenter" component={MyCenter} />
-              <Route path="/goods/:id" component={Goods} />
+              <Route path="/goods" component={Goods} />
               <Route path="/money" component={Money} />
               <Route path="/notfound" render={()=><div>404页面</div>}/>
               <Redirect from="/" to="/home" exact/>

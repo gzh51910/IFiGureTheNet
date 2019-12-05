@@ -76,9 +76,9 @@ Router.get('/find5', async(req, res) => {
 
 
 // 添加到商品收藏
-Router.post('/adda', async (req, res) => {
+Router.post('/adda', async(req, res) => {
     let { pic, title } = req.body;
-    let result = await mongodb.Create('collection',{pic,title})
+    let result = await mongodb.Create('collection', { pic, title })
     if (result.insertedCount > 0) {
         res.send(formatData());
     } else {
@@ -88,9 +88,9 @@ Router.post('/adda', async (req, res) => {
     }
 })
 
-Router.post('/add', async (req, res) => {
-    let { pic,title} = req.body;
-    let result = await mongodb.Create('collection', {pic,title})
+Router.post('/add', async(req, res) => {
+    let { pic, title } = req.body;
+    let result = await mongodb.Create('collection', { pic, title })
     if (result.insertedCount > 0) {
         res.send(formatData());
     } else {
@@ -99,7 +99,6 @@ Router.post('/add', async (req, res) => {
         }))
     }
 })
-<<<<<<< HEAD
 
 
 
@@ -108,13 +107,26 @@ Router.post('/add', async (req, res) => {
 //列表页查询数据接口--左侧列表数据
 Router.get('/classify', async(req, res) => {
     // mongodb查询数据库（1）
-    let data = await mongodb.Find('列表左侧', {});
+    let data = await mongodb.Find('List_list', {});
     res.send(formatData({
         data
     }))
 })
 
-
+Router.get('/classify1', async(req, res) => {
+    // mongodb查询数据库（1）
+    let data = await mongodb.Find('List_list1', {});
+    res.send(formatData({
+        data
+    }))
+})
+Router.get('/classify2', async(req, res) => {
+    // mongodb查询数据库（1）
+    let data = await mongodb.Find('List_list2', {});
+    res.send(formatData({
+        data
+    }))
+})
 
 /* --------------------------------------------------------------------------------------------- */
 
@@ -143,16 +155,9 @@ Router.patch('/update/:id', async(req, res) => {
 
     if (result.modifiedCount > 0) {
         res.send(formatData())
-=======
-Router.post('/addb', async (req, res) => {
-    let { pic, title } = req.body;
-    let result = await mongodb.Create('collection', { pic, title })
-    if (result.insertedCount > 0) {
-        res.send(formatData());
->>>>>>> 2fa534d07aa4ab593a148a1f2ffa6c7b0854e735
     } else {
         res.send(formatData({
-            status:0
+            status: 0
         }))
     }
 })

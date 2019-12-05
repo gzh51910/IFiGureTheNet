@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/goods.css';
 import {Icon,Menu, Dropdown,Tabs,Card } from 'antd';
+import axios from 'axios';
 const { TabPane } = Tabs;
 const { Meta } = Card;
 function callback(key) {
@@ -26,11 +27,33 @@ let menu = (
     </Menu>
   );
 class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            list3:[],
+            list4:[],
+            list5:[]
+        }
+    }
+     async componentDidMount(){
+      let {data:{data}} = await axios.get("http://10.3.136.108:8011/goods/classify");
+      let aa = await axios.get("http://10.3.136.108:8011/goods/classify1");
+      let bb = await axios.get("http://10.3.136.108:8011/goods/classify2");
+      this.setState({
+          list3:data,
+          list4:aa.data.data,
+          list5:aa.data.data
+      })
+    //   console.log(this.state.list3);
+    //   console.log(this.props);
+      
+      }
     gotoHome=()=>{
         // console.log(this.props);
         this.props.history.goBack("/home")
     }
     render() {
+        let {params}=this.props.location
         return (
         <div className="bigBig">
             {/* 头部 */}
@@ -48,7 +71,7 @@ class Login extends Component {
                 <div className="nav-change">
                     <Dropdown overlay={menu} trigger={['click']}>
                         <a className="ant-dropdown-link" href="#" style={{color:"#fff"}}>
-                        背景墙 <Icon type="down" />
+                        {params} <Icon type="down" />
                         </a>
                     </Dropdown>
                 </div>
@@ -62,43 +85,45 @@ class Login extends Component {
                 <TabPane tab="综合排序" key="1" style={{width:"100%"}}>
                    {/* 图片加文字 */}
                    <div className="cart_c2">
-                                        <Card
+                                    {
+                                        this.state.list3.map(item=>{
+                                            return   <Card
+                                            key={item._id}
                                             style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
+                                            cover={<img  alt="example" src={item.src_L} style={{height:"3.5rem"}}/>}>
+                                            <Meta title={item.title2} style={{textAlign:"center"}}/>
                                         </Card>
-                                        <Card
-                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
-                                        </Card>
-                                        <Card
-                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
-                                        </Card>
-                                        <Card
-                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
-                                        </Card>
-                                        <Card
-                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
-                                        </Card>
-                                        <Card
-                                            style={{width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
-                                            cover={<img  alt="example" src="https://bpic.wotucdn.com/23/46/82/23468271-c6bed9da15df816f8ea6ffe73d886fef.jpg!/fw/325/quality/90/unsharp/true/compress/true/canvas/325x325a0a0/format/webp" style={{height:"3.5rem"}}/>}>
-                                            <Meta title="我的" style={{textAlign:"center"}}/>
-                                        </Card>
+                                        })
+                                    }
                                         </div>
                 </TabPane>
                 <TabPane tab="最新上传" key="2" style={{width:"100%"}}>
-                Content of Tab Pane 2
+                <div className="cart_c2">
+                                    {
+                                        this.state.list4.map(item=>{
+                                            return   <Card
+                                            key={item._id}
+                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src={item.src_L} style={{height:"3.5rem"}}/>}>
+                                            <Meta title={item.title2} style={{textAlign:"center"}}/>
+                                        </Card>
+                                        })
+                                    }
+                                        </div>
                 </TabPane>
                 <TabPane tab="最多下载" key="3" style={{width:"100%"}}>
-                Content of Tab Pane 3
+                <div className="cart_c2">
+                                    {
+                                        this.state.list5.map(item=>{
+                                            return   <Card
+                                            key={item._id}
+                                            style={{ width: "45%",height:"47.5%",float:"left",marginLeft:"3.5%",padding:"0.1rem",marginBottom:"0.15rem" }}
+                                            cover={<img  alt="example" src={item.src_L} style={{height:"3.5rem"}}/>}>
+                                            <Meta title={item.title2} style={{textAlign:"center"}}/>
+                                        </Card>
+                                        })
+                                    }
+                                        </div>
                 </TabPane>
             </Tabs>
             </div>

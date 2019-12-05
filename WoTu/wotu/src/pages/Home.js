@@ -12,7 +12,10 @@ class Home extends Component{
         list3:[]
     }
     gotoGoods=(id)=>{
-        this.props.history.push(`/goods/${id}`)
+        this.props.history.push({
+            pathname:`/goods`,
+            params:id
+        })
         
     }
     gotoList=(id)=>{
@@ -85,7 +88,7 @@ class Home extends Component{
                     <div className="index-classify">
                         {
                         this.state.list.map(item => {
-                            return <a onClick={this.gotoGoods.bind(this,4)} key={item._id} className="fl classify-box">
+                            return <a onClick={this.gotoGoods.bind(this,item.title)} key={item._id} className="fl classify-box">
                            <div className="classify"><img src={item.imgUrl}></img></div>
                         <p>{item.title}</p>
                             </a>
@@ -103,7 +106,7 @@ class Home extends Component{
                             {
                                 this.state.list3.map(item => {
                                     return <li className="subject-box-li" key={item} >
-                                    <img src={item} onClick={this.gotoGoods.bind(this,3)} />
+                                    <img src={item}/>
                                  </li>
                                 })
                            }
@@ -121,13 +124,13 @@ class Home extends Component{
                                         <div className="cart_c">
                                         <Card
                                             style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
-                                            cover={<img  alt="example" src={item.src_L} onClick={this.gotoGoods.bind(this,1)}/>}>
-                                            <Meta title={item.title_L} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,1)}/>
+                                            cover={<img  alt="example" src={item.src_L} />}>
+                                            <Meta title={item.title_L} style={{textAlign:"center"}} />
                                         </Card>
                                         <Card
                                             style={{width: "45%",height:238,float:"left",marginLeft:"3.5%" }}
-                                            cover={<img  alt="example" src={item.src_R}onClick={this.gotoGoods.bind(this,2)}/>}>
-                                            <Meta title={item.title_R} style={{textAlign:"center"}} onClick={this.gotoGoods.bind(this,2)}/>
+                                            cover={<img  alt="example" src={item.src_R}/>}>
+                                            <Meta title={item.title_R} style={{textAlign:"center"}} />
                                         </Card>
                                         </div>
                                         {/* 更多 */}
