@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../css/detail.css';
 import { Menu, Dropdown, Icon,Button,Card } from 'antd';
+import axios from 'axios';
 const { Meta } = Card;
 let menu = (
     <Menu style={{textAlign:"left"}}>
@@ -59,47 +60,33 @@ let menu = (
 class Reg extends Component {
     constructor(props){
         super(props)
-        // console.log(this.props.location.params);
+        console.log(this.props.location.params);
         
     }
     state={
-        list2:[
-            {
-                "num2":"1",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-            {
-                "num2":"2",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-            {
-                "num2":"3",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-                "src_R":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title3":"装饰画",
-            },
-        ]
+        list3:[]
     }
+    async componentDidMount(){
+      let {data:{data}} = await axios.get("http://localhost:8011/goods/find1");
+      this.setState({
+          list3:data
+      })
+      }
     gotoList=()=>{
        this.props.history.goBack("/list")
     }
     gotoHome=()=>{
         this.props.history.push("/home")
-            }
+  }
+  collection = () => {
+    let { params } = this.props.location;
+    let pic = params[0]
+    let title = params[1]
+    console.log(pic,title);
+    
+    }
     render() {
         let {params}=this.props.location
-        if(params==undefined){
-            params=localStorage.getItem("4")
-        }
-        // console.log(localStorage.getItem("4"));
-        
         return (
                 <div className="bigBox">
                     {/* 头部 */}
@@ -118,7 +105,7 @@ class Reg extends Component {
                     {/* 大图片 */}
                     <div className="pic-show">
                         <div className="pic">
-                            <img src={params}/>
+                            <img src={params[0]}/>
                             </div>
                         <div className="look-big-img">点击查看大图
                           <Icon type="search" style={{ fontSize: '16px', color: '#999',paddingLeft:"0.1rem" }}/>
@@ -127,13 +114,13 @@ class Reg extends Component {
                     {/* 新中式 */}
                     <div className="work-details">
                         <div className="clearfix workName">
-                            <h1 className="fl">新中式后现代珐琅彩高档山水麋鹿轻奢客厅装饰画</h1>
+                            <h1 className="fl">{params[1]}</h1>
                             <div className="fr downloadPreview downPreviewPic">
                             <Icon type="download" />下载预览
                             </div>
                         </div>
                         <div className="clearfix num-show">
-                            <span className="fl price-show">价格：78我图币</span>
+        <span className="fl price-show">价格：{params[2]}000我图币</span>
                         </div>
                     </div>
                     {/* 编号 */}
@@ -153,17 +140,17 @@ class Reg extends Component {
                     {/* 卡片 */}
                     <div className="lei">
                       {
-                          this.state.list2.map(item=>{
-                              return   <div className="cart_c" key={item.num2}>
+                          this.state.list3.map(item=>{
+                              return   <div className="cart_c" key={item._id}>
                                         <Card
                                             style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%",marginBottom:"0.3rem" }}
-                                            cover={<img alt="example" src={item.src_L}/>}>
-                                            <Meta title={item.title2} style={{textAlign:"center"}}/>
+                                            cover={<img alt="example" src={require('../img'+item.img)}/>}>
+                                            <Meta title={item.title} style={{textAlign:"center",marginLeft:"1rem"}}/>
                                         </Card>
                                         <Card
                                             style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%",marginBottom:"0.3rem"}}
-                                            cover={<img alt="example" src={item.src_R}/>}>
-                                            <Meta title={item.title3} style={{textAlign:"center"}}/>
+                                            cover={<img alt="example" src={require('../img'+item.img1)}/>}>
+                                            <Meta title={item.title1} style={{textAlign:"center",marginLeft:"1rem"}}/>
                                         </Card>
                                         </div>
                           })
@@ -175,7 +162,7 @@ class Reg extends Component {
                         <Icon type="home"style={{ fontSize: '20px', color: '#999',marginTop:"0.15rem" }}/><br/>
                             <span>首页</span>
                         </a>
-                        <a className="join-coll fl">加入收藏</a>
+                        <a className="join-coll fl" onClick={this.collection}>加入收藏</a>
                         <a className="join-download fl">立即下载</a>
                     </div>
                 </div>

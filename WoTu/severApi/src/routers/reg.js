@@ -14,7 +14,6 @@ Router.post('/', async(req, res) => {
         res.send(formatData());
     } else {
         res.send(formatData({ status: 0 }));
-        // console.log(formatData({status:0}))
     }
 })
 

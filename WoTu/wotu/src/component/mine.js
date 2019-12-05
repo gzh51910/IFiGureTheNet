@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-function Me({ menu, Right, goto, phone, user,history,logout }) {
+function Me({ menu, Right, goto, phone, user,logout }) {
 
   
         return (

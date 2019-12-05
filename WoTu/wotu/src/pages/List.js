@@ -1,170 +1,26 @@
 
 import React, { Component } from 'react'
 import '../css/list.css';
-import { Input,Icon,Tabs,Divider,Carousel,Card} from 'antd';
+import { Input,Icon,Tabs,Divider,Carousel,Card, Radio} from 'antd';
+import axios from 'axios';
 const { Meta } = Card;
 const { Search } = Input;
 const { TabPane } = Tabs;
 class List extends Component{
+    constructor(props) {
+        super(props);
+        // console.log(this.props.location.params);
+      }
+      handleModeChange = e => {
+        const mode = e.target.value;
+        this.setState({ mode });
+      };
+    
     state = {
-        title:[ {
-            num1:"1",
-            name: '装饰画 / 玄关装饰',
-            "title3":[  {
-                "num2":"1",
-                "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                "title2":"装饰画",
-            },],
-        },],
-        menu: [
-             {
-                num1:"1",
-                 name: '装饰画 / 玄关装饰',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"2",
-                 name: '背景墙/壁纸',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                }, {
-                    "num2":"2",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"3",
-                 name: '地面/吊顶设计',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                }, {
-                    "num2":"2",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                }, {
-                    "num2":"3",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"4",
-                 name: '平面/展板/海报',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"5",
-                 name: '文化墙/展馆/宣传栏',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"6",
-                 name: '视频/配乐/实拍',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                }, {
-                    "num2":"2",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"7",
-                 name: 'PPT模板/办公文档',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"8",
-                 name: '手抄报/档案/课件',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                }, {
-                    "num2":"2",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"9",
-                 name: '电商淘宝/新媒体/UI',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"10",
-                 name: '元素/矢量/样机/插画',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"11",
-                 name: '服装/家居/数码图案',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"12",
-                 name: '摄影图/创意合成',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"13",
-                 name: '摄影图/创意a',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             }, {
-                num1:"14",
-                 name: '摄影图/创意b成',
-                 "title3":[  {
-                    "num2":"1",
-                    "src_L":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-                    "title2":"装饰画",
-                },],
-             },
-
-        ],
-    }
-     callback=(key)=>{
-        console.log(key);
-    }
-    goto = (item) =>{
-        this.setState({
-            title:[item]
-        })
-        
+        mode: 'left',
+        menu: [],
     }
     gotoDetail=(src)=>{
-        // console.log(this.props);
-        // this.props.history.push("/detail");
         this.props.history.push({
             pathname:`/detail`,
             params:src
@@ -173,66 +29,88 @@ class List extends Component{
     gotoHome=()=>{
         this.props.history.push("/home");
     }
+    async componentDidMount(){
+        let {data:{data}} = await axios.get("http://localhost:8011/goods/find5");
+        // console.log(data);
+        let arr = [];
+        data.forEach(item=>{
+        arr.push(item)
+        })
+        for(var i=0;i<arr.length;i++){
+            let b=arr[i].title3
+            for(var e=0;e<b.length;e++){
+                b[e].src_L=require('../img/image/'+b[e].src_L)
+            }
+        }
+        this.setState({
+           menu:data
+        })
+        // console.log(data);
+        
+        };
     render() {
+        const { mode,menu } = this.state;    
+        // console.log("wert",typeof this.props.location.params);
         return (
-            <section style={{marginBottom:"15.2rem",width:"100%",height:"100%"}}>
+            <section style={{width:"100%",height:"100%"}}>
                 <article className = 'Search-warp' >
                     < Icon type="left"
                         style={{
                            position: 'absolute',
                             left: '0.4rem',
-                            top:'.25rem',
+                            top:'15%',
                             color: '#fff',
                             fontSize: '0.5rem'
                         }}
                         onClick={this.gotoHome}
                     />
                     <Search
-                        style={{ width: '5rem',height:'0.7rem',borderRadius:'30%'}}
+                        style={{ width: '70%',height:'80%',borderRadius:'30%',position:"absolute",top:"10%",left:"1.5rem"}}
                         className='Search'
                         placeholder="请输入标题、关键词搜索"
                         onSearch={value => console.log(value)}
                         />
                 </article>
-                <article style={{position:"absolute",top:'1rem'}}>
-                    <ul>
-                        {
-                            this.state.menu.map(item => {
-                                return <li
-                                    className='nav-left'
-                                    key={item.name}
-                                    onClick={this.goto.bind(this,item)}
-                                >
-                                    {item.name}
-                                </li>
-                            })
-                        }
-                    </ul>
+               <article style={{width:"100%",height:"12rem",position:"fixed",top:"0.24rem"}}>
+                    <Radio.Group onChange={this.handleModeChange} value={mode} style={{ marginBottom: 8}}>
+                    <Radio.Button value="top">Horizontal</Radio.Button>
+                    <Radio.Button value="left">Vertical</Radio.Button>
+                    </Radio.Group>
+                    <Tabs defaultActiveKey={this.props.location.params + ""} tabPosition={mode} style={{ height: "94%",width:"100%",position:"fixed",top:"7.5%" }}>
+                    {[...Array(13).keys()].map(i => (
+                        <TabPane tab={
+                            (this.state.menu.length>0)?this.state.menu[i].name:""} key={i}>
+                             <div   style={{ width: "90%",
+                                     height: "20%",
+                                     background: "#0EC5A1",
+                                     lineHeight: "0.8rem",
+                                     textAlign:"center",
+                                     color:"#fff",
+                                     margin:"5% auto",
+                                    }}>进入{
+                                    (this.state.menu.length>0)?this.state.menu[i].name:""}频道</div>
+                                    {/* 分类线 */}
+                            <article style={{width:'5rem',margin:"auto"}}>
+                                < Divider className ='divider'> <span style={{fontSize:'12px'}}>主要分类</span> </Divider>
+                            </article>
+                            {/* {console.log(this.state.menu[i])} */}
+                            {/* 列表循环 */}
+                            <article className="list_tab">
+                            {
+                               (this.state.menu.length>0)?this.state.menu[i].title3.map(item1=>{
+                                    return  <Card
+                                    key={item1.num2}
+                                    style={{ width: "1.4rem",height:"2rem",float:"left",marginRight:"5%",marginBottom:"0.3rem"}}
+                                    cover={<img onClick={this.gotoDetail.bind(this,[item1.src_L,item1.title2,item1.num2])} alt="example" src={item1.src_L} style={{ height: "1.5rem"}}/>}>
+                                    <Meta title={item1.title2} style={{position:"absolute",top:"1.2rem"}}/>
+                                </Card>
+                                }):""
+                            }
                 </article>
-                <article className='Title'>
-                    <h4>进入{this.state.title[0].name}频道</h4>
-                </article>
-                <article style={{width:'5rem',marginTop:'1.2rem',marginLeft:'30%'}}>
-                    < Divider className ='divider'> <span style={{fontSize:'12px'}}>主要分类</span> </Divider>
-                </article>
-                <article className="listList">
-                    {
-                        this.state.title.map(item=>{
-                            return    <div className="cart_c1" key={item.num1}>
-                                    {
-                                        item.title3.map(item1=>{
-                                            return  <Card
-                                            key={item1.num2}
-                                            style={{ width: "25%",height:"2rem",float:"left",marginLeft:"6%",marginBottom:"0.3rem"}}
-                                            cover={<img onClick={this.gotoDetail.bind(this,item1.src_L)} alt="example" src={item1.src_L} style={{ height: "1.5rem"}}/>}>
-                                            <Meta title={item1.title2} style={{textAlign:"center",height:"0.5rem"}}/>
-                                        </Card>
-                                        })
-                                    }
-                                    </div>
-                        })
-                        }
-                </article>
+                        </TabPane>
+                    ))}
+                    </Tabs>
+               </article>
             </section>
         )
     }

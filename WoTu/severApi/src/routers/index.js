@@ -7,7 +7,6 @@ const {
 } = require('../utils')
 
 let HomeRouter = require('./Home');
-let ListRouter = require('./List');
 let GoodsRouter = require('./goods');
 let AdminRouter = require('./Adminlogin');
 let loginRouter = require('./login');
@@ -41,7 +40,6 @@ Router.use(express.json(), express.urlencoded({
 }));
 
 Router.use('/home', HomeRouter);
-Router.use('/list', ListRouter);
 Router.use('/goods', GoodsRouter);
 Router.use('/login', loginRouter);
 Router.use('/reg', regRouter);

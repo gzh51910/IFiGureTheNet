@@ -1,0 +1,102 @@
+input,
+button,
+section {
+    outline: none;
+}
+
+.head-wrap {
+    width: 100%;
+    height: 1.04rem;
+    background: #0cc59e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .3rem;
+}
+
+.head-wrap span {
+    font-size: 0.32rem;
+    color: #ffffff;
+}
+
+.Tabs {
+    text-align: center;
+}
+
+.Tabs .TabPane {
+    color: chartreuse;
+    text-align: center;
+}
+
+.Figure {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: red;
+    background: url(../img/qq.jpg) center no-repeat;
+    background-size: 2.25rem 2.25rem;
+    margin: 1rem 0 0.3rem 0;
+}
+
+.Wotu {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: red;
+    background: url(../img/wotu.jpg) center no-repeat;
+    background-size: 2.25rem 2.25rem;
+    margin: 1rem 0 0.3rem 0;
+}
+
+.Login {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background: #f6f6f6;
+    padding-bottom: 6.5rem;
+    margin-top: -0.32rem;
+}
+
+.Span {
+    color: #2d2d2d;
+    font-size: .26rem;
+}
+
+.Reg {
+    height: 10.2rem;
+    background: #f6f6f6;
+    padding: 0.2rem;
+    margin-top: -0.32rem;
+
+}
+
+.verification-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem
+}
+
+.verification {
+    width: 3.5rem;
+    height: .9rem;
+    padding: 0 0.1rem;
+    border-radius: 0.1rem;
+}
+
+.btnA {
+    /* width: 3.2rem; */
+    background: #0cc59e;
+    border: 0;
+    color: #fff;
+    border-radius: 0.1rem;
+}
+
+.btnB {
+    width: 100%;
+    height: 0.9rem;
+    background: #0cc59e;
+    color: #fff;
+    border-radius: 0.1rem;
+    border: 0;
+}
