@@ -75,7 +75,7 @@ class Login extends Component {
                         </a>
                     </Dropdown>
                 </div>
-                <div className="searchLink"><a >搜索<Icon type="search" style={{position:"absolute",
+                <div className="searchLink"><a href="#">搜索<Icon type="search" style={{position:"absolute",
     top: "30%",
     right: "12%"}}/></a></div>
             </div>

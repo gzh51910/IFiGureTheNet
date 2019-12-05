@@ -7,7 +7,7 @@ const secretKey = 'Admin';
  * @param {Number|String} expiresIn     有效期
  * @return {String}                     返回token
  */
-function create(data, expiresIn = 2 * 60 * 60 * 24 * 30) {
+function create(data, expiresIn =60*60*2) {
     var token = jwt.sign(
         data,
         secretKey, // 密钥
@@ -20,7 +20,6 @@ function verify(token) {
     let result;
     try {
         var decoded = jwt.verify(token, secretKey);
-        console.log('verify:', decoded)
         result = true;
     } catch (err) {
         // err

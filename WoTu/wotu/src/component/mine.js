@@ -30,7 +30,7 @@ function Me({ menu, Right, goto, phone, user,logout }) {
                         <p>{'ID:'+user._id}</p>
                         </article>
                         <article className='Pic'>
-                            <img src={require('../img/TX.jpg')}/>
+                            <img src={require('../img/TX.jpg')} alt=''/>
                         </article>
                     </article>
                 </article>
@@ -40,7 +40,7 @@ function Me({ menu, Right, goto, phone, user,logout }) {
                     <Button type="primary"
                         size='small'
                         style={{background:'#0cc59e'}}
-                    ><a onClick={goto}>充值</a></Button>
+                    ><a href='#' onClick={goto}>充值</a></Button>
                 </article>
                 <article className='setting-wrap'>
                     {

@@ -1,16 +1,12 @@
 
 import React, { Component } from 'react'
 import '../css/list.css';
-import { Input,Icon,Tabs,Divider,Carousel,Card, Radio} from 'antd';
+import { Input,Icon,Tabs,Divider,Card, Radio} from 'antd';
 import axios from 'axios';
 const { Meta } = Card;
 const { Search } = Input;
 const { TabPane } = Tabs;
 class List extends Component{
-    constructor(props) {
-        super(props);
-        // console.log(this.props.location.params);
-      }
       handleModeChange = e => {
         const mode = e.target.value;
         this.setState({ mode });
@@ -49,7 +45,7 @@ class List extends Component{
         
         };
     render() {
-        const { mode,menu } = this.state;    
+        const { mode} = this.state;    
         // console.log("wert",typeof this.props.location.params);
         return (
             <section style={{width:"100%",height:"100%"}}>

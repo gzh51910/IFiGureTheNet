@@ -66,7 +66,7 @@ class Home extends Component{
                     <div className="header clearfix">
                         <div className="logo fl"><a href=""></a></div>
                         <div className="fr search-top  clearfix">
-                            <a onClick={this.gotoGoods.bind(this,5)}>
+                        <a onClick={this.gotoGoods.bind(this, 5)} href='#'>
                                 请输入标题、关键词搜索
                        <i className="fr"><Icon type="search" /></i>
                             </a>
@@ -78,7 +78,7 @@ class Home extends Component{
                         this.state.datalist.map(item => {
                             return <div key={item}>
                                 {
-                                   <img  src={item} />
+                                   <img  src={item} alt=''/>
                                 }
                             </div>
                         })
@@ -135,7 +135,7 @@ class Home extends Component{
                                         </div>
                                         {/* 更多 */}
                                         <div className="more-work">
-                                            <a className="more-a" onClick={this.gotoList.bind(this,item.num)}>更多分类
+                                            <a className="more-a" onClick={this.gotoList.bind(this,item.num)} href='#'>更多分类
                                             <Icon type="right-circle" theme="twoTone"  twoToneColor="#007fff"/>
                                             </a>
                                         </div>
