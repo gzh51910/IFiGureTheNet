@@ -72,7 +72,8 @@ class App extends Component{
           Authorization
         }
       }).then(({ data }) => {
-        if (path === '/mine' && data.status === 0) {
+        // 验证成功之后执行
+        if (path === '/mine' && data.status === 0 ) {
           history.push('/mycenter')
        }
         
