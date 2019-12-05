@@ -71,6 +71,7 @@ class Reg extends Component {
       this.setState({
           list3:data
       })
+      // console.log(this.state.list3);
       }
     gotoList=()=>{
        this.props.history.goBack("/list")
@@ -80,6 +81,8 @@ class Reg extends Component {
             }
     render() {
         let {params}=this.props.location
+        console.log(params[0]);
+        
         return (
                 <div className="bigBox">
                     {/* 头部 */}
@@ -134,7 +137,7 @@ class Reg extends Component {
                     <div className="lei">
                       {
                           this.state.list3.map(item=>{
-                              return   <div className="cart_c" key={item.num2}>
+                              return   <div className="cart_c" key={item._id}>
                                         <Card
                                             style={{ width: "45%",height:238,float:"left",marginLeft:"3.5%",marginBottom:"0.3rem" }}
                                             cover={<img alt="example" src={require('../img'+item.img)}/>}>

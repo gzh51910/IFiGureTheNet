@@ -105,8 +105,10 @@ class Login extends Component {
                 </div>
                 {/* 账号显示 */}
                 <div className="hello clearfix margin-none">
-                    <p className="fl"><i>账号：</i><span>{}...</span><i>({this.state.t1})</i></p>
-                    <p className="fr">当前余额: {}我图币</p>
+                    <p className="fl"><span>
+                        账号：
+                        {this.state.phone}</span></p>
+                    <p className="fr">当前余额: 3我图币</p>
                 </div>
                 {/* 选择充值金额 */}
                 <div className="recharge-box">
@@ -117,7 +119,7 @@ class Login extends Component {
                  <Row  gutter={[16, 16]} style={{"height":"1.64rem","margin": "0px"}}>
                 {
                      this.list.map(item=>{
-                        return  <Col key={item.id} span={12} style={{ width: "40%"}}>
+                        return  <Col key={item.id} span={12} style={{ width: "40%",marginLeft:"6.5%"}}>
                         <p style={{marginBottom:"0rem",marginTop:"0.1rem"}}>充<span>{item.money}</span>元</p>
                         <p style={{marginBottom:"0rem",marginTop:"0.1rem"}}>获取{item.many}我图币</p>
                         </Col>
@@ -129,7 +131,7 @@ class Login extends Component {
                <div className="couponCondition clearfix">
                     <div className="fr useCoupon">
                     <Row style={{width:"70%",float:"left",height:"100%"}}>
-                        <Col span={12} style={{height:"100%",float:"left",marginLeft:"0", width:"2.7rem",border:"0"}}>
+                        <Col span={12} style={{height:"100%",float:"left",marginLeft:"0", width:"55.1%",border:"0",padding:"5.1% 0"}}>
                         <Slider
                             min={50}
                             max={60000}
@@ -171,9 +173,9 @@ class Login extends Component {
                         <span className="fl">
                             < Icon type="wechat" 
                                 style={{ fontSize: '16px', marginRight: "0.3rem",color:'#0ec5a1' }} />
-                            微信</span>
+                            微&nbsp;&nbsp;&nbsp;信</span>
                         
-                        <span className="check1"><Checkbox onChange={this.onChange}></Checkbox></span>
+                        <span className="check"><Checkbox onChange={this.onChange}></Checkbox></span>
                     </div>
                     <div className="agree">
                         

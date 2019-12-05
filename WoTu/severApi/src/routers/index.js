@@ -17,12 +17,9 @@ let userRouter = require('./user');
 Router.use((req, res, next) => {
     // 支持CORS跨域，只需要设置响应头
     let currentOrigin = req.get('Origin');
-<<<<<<< HEAD
     let allowOrigin = ['http://localhost:8080', 'http://localhost:8081',
-        'http://localhost:8081', 'http://localhost:3000']
-=======
-    let allowOrigin = ['http://localhost:8080', 'http://localhost:8011']
->>>>>>> dwd
+        'http://localhost:8081', 'http://localhost:3000'
+    ]
     if (allowOrigin.includes(currentOrigin)) {
         res.set({
             'Access-Control-Allow-Origin': currentOrigin,

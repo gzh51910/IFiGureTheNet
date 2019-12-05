@@ -69,6 +69,17 @@ Router.get('/find5', async(req, res) => {
         data
     }))
 })
+Router.post('/add11', async(req, res) => {
+    let { pic, title } = req.body;
+    let result = await mongodb.Create('collection', { pic, title })
+    if (result.insertedCount > 0) {
+        res.send(formatData());
+    } else {
+        res.send(formatData({
+            status: 0
+        }))
+    }
+})
 Router.get('/', async(req, res) => {
     let { name, sort } = req.query;
     // let name = "大益";
@@ -81,19 +92,16 @@ Router.get('/', async(req, res) => {
 
 //查询单个商品
 Router.get('/findsingle/:id', async(req, res) => {
-    let {
-        id
-    } = req.params;
-    // mongodb查询数据库（1）
-    let data = await mongodb.Find('GoodsAll', { _id: id });
-    res.send(formatData({
-        data
-    }))
-})
-
-
-
-//列表页增加商品数据接口--内容直接在响应体中获取
+        let {
+            id
+        } = req.params;
+        // mongodb查询数据库（1）
+        let data = await mongodb.Find('GoodsAll', { _id: id });
+        res.send(formatData({
+            data
+        }))
+    })
+    //列表页增加商品数据接口--内容直接在响应体中获取
 Router.post('/add', async(req, res) => {
     let {
         dwd,
@@ -249,7 +257,6 @@ Router.patch('/updateuser/:id', async(req, res) => {
     }
 })
 
-
 // 查询所有用户
 Router.get('/userall', async(req, res) => {
     // mongodb查询数据库（1）
@@ -335,5 +342,6 @@ Router.patch('/update/:id', async(req, res) => {
         }))
     }
 })
+
 
 module.exports = Router

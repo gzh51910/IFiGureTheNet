@@ -253,6 +253,7 @@ a {
     font-size: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
+    /* margin-left: 31%; */
     /* background: red; */
 }
 
@@ -264,4 +265,8 @@ a {
     text-align: center;
     height: 0.4rem;
     line-height: 0.4rem;
+}
+
+.more-a {
+    font-size: 0.3rem;
 }

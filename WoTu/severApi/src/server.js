@@ -4,13 +4,8 @@ const app = express();
 
 const { PORT } = require('./config.json');
 
-<<<<<<< HEAD
-const allRouter = require('./routers'); 
-app.all('*', function (req, res, next) {
-=======
 const allRouter = require('./routers');
 app.all('*', function(req, res, next) {
->>>>>>> dwd
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");

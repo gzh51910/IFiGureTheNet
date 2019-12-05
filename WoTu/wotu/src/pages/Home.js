@@ -132,7 +132,7 @@ class Home extends Component{
                                         </div>
                                         {/* 更多 */}
                                         <div className="more-work">
-                                            <a onClick={this.gotoList.bind(this,item.num)}>更多分类
+                                            <a className="more-a" onClick={this.gotoList.bind(this,item.num)}>更多分类
                                             <Icon type="right-circle" theme="twoTone"  twoToneColor="#007fff"/>
                                             </a>
                                         </div>
