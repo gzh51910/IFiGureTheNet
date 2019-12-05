@@ -29,20 +29,25 @@ class LogIn extends Component{
     this.props.form.validateFields(async(err, values) => {
         let { phone, password} = values    
       if (!err) {
-        let {data} = await axios.get("http://localhost:8011/login", {params:{ phone, password}
-         
-        })
-        //   console.log(data);
-        if(data.status==1){
-          let user=data.data[0];
-         let { dispatch } = this.props;
-          dispatch(login(user))
-          localStorage.setItem('user',JSON.stringify(user));
-          this.props.history.push('/mine')
-        } else {
-            alert("用户名或者密码错误！")
-}
-    }
+          let result = await axios.get("http://localhost:8011/login", {
+              params: { phone, password }
+
+          })
+          let { data, headers } = result
+          if (data.status === 0) {
+              alert("账号或者密码错误，请重新输入")
+          } else {
+              let { dispatch } = this.props;
+              let user = data.data[0]
+              let Authorization=headers.authorization;
+              dispatch(login(user));
+              localStorage.setItem('Authorization', Authorization)
+              this.props.history.push('/mine')
+          }
+      } else {
+          
+        }
+        
     });
     };
     
@@ -51,14 +56,14 @@ class LogIn extends Component{
         e.preventDefault();
         let phone=this.phone.state.value
         let password = this.password.state.value
-        console.log(this.value);
-        // if (this.state.checked === false) {
-        //     alert('请先勾选同意《须知声明》和《版权声明》')
-        //     return;
-        // }
-        // axios.post("http://localhost:8011/reg", { phone, password})
-        // alert('注册成功')
-        // this.props.history.push('/mine')
+        if (phone && password) {
+            axios.post("http://localhost:8011/reg", { phone, password })
+            alert('注册成功')
+            this.props.history.push('/mycenter')      
+        } else {
+            alert("请输入账号或者密码")
+            return;
+        }
         
         
   }
@@ -71,7 +76,7 @@ class LogIn extends Component{
       return (
         
           <Tabs defaultActiveKey="1"
-              style={{textAlign:'center'}}
+              style={{textAlign:'center',fontSize:'0.28rem'}}
           >
             <TabPane tab="登录" key="1">
                   <Form onSubmit={this.handleSubmit} style={{ padding: '0 0.5rem' }}>

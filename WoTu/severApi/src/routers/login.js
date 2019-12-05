@@ -17,7 +17,7 @@ Router.get('/', async (req, res) => {
             'Access-Control-Expose-Headers': 'Authorization',
             'Authorization': Authorization
         });
-        res.send(formatData({ data }));
+        res.send(formatData({ data}));
     } else { //未查询到数据
         res.send(formatData({ status: 0 }));
     }
