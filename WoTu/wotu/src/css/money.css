@@ -81,7 +81,7 @@ em {
     /* max-width: 1.6rem; */
     /* overflow: hidden;
     text-overflow: ellipsis; */
-    white-space: nowrap; 
+    white-space: nowrap;
     /* vertical-align: -0.43rem; */
 }
 
@@ -200,11 +200,8 @@ textarea {
 }
 
 .check {
-    margin-left: 4rem;
-}
-
-.check1 {
-    margin-left: 4.23rem;
+    position: absolute;
+    right: 10%;
 }
 
 

@@ -57,17 +57,32 @@ class App extends Component{
        ]
   }
   goto = ({ key: path }) => {
+<<<<<<< HEAD
     let { history,user } = this.props;
       console.log( path);
       console.log(this.props);
+=======
+    let { history, phone, user } = this.props;
+      // console.log( path);
+      // console.log(this.props);
+>>>>>>> f8ce176af474035debd5652eeb7f6485fb690761
       
         this.setState({
             currentPath: path
         })
+<<<<<<< HEAD
     if (path === "/mine" && user === {}) {
           // history.push('/login')
       console.log(666);
       
+=======
+    if (path === '/mine') {
+let a=localStorage.getItem("user")
+// localStorage.setItem()
+if(a==null){
+  path="/login"
+}
+>>>>>>> f8ce176af474035debd5652eeb7f6485fb690761
         }
         history.push(path)
   }

@@ -71,6 +71,7 @@ class Reg extends Component {
       this.setState({
           list3:data
       })
+      // console.log(this.state.list3);
       }
     gotoList=()=>{
        this.props.history.goBack("/list")
@@ -87,6 +88,8 @@ class Reg extends Component {
     }
     render() {
         let {params}=this.props.location
+        console.log(params[0]);
+        
         return (
                 <div className="bigBox">
                     {/* 头部 */}
