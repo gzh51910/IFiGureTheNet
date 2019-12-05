@@ -20,8 +20,8 @@ class MyCenter extends Component {
         return (
             <section>
                  <article className='head-wrap'>
-                    < Icon
-                        onClick={this.goto}
+                    {/* < Icon
+                        // onClick={this.goto}
                         type="left"
                         style={{
                             position: 'absolute',
@@ -29,7 +29,7 @@ class MyCenter extends Component {
                             color: '#fff',
                             fontSize:'0.5rem'
                         }}
-                    />
+                    /> */}
                     <span>个人中心</span>
                 </article>
                 {/* <MYC></MYC>       */}

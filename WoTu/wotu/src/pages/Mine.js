@@ -39,7 +39,7 @@ class Mine extends Component {
     }
   logout = () => {
       this.props.dispatch(logout())
-      localStorage.removeItem('user')
+      localStorage.removeItem('Authorization')
       this.props.history.push('/mycenter')
   }
     

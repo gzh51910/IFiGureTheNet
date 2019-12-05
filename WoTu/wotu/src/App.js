@@ -13,6 +13,7 @@ import Detail from './pages/Detail'
 import MyCenter from './pages/MyCenter'
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
+import axios from 'axios'
 import {
   connect
 } from 'react-redux'
@@ -57,37 +58,33 @@ class App extends Component{
        ]
   }
   goto = ({ key: path }) => {
-<<<<<<< HEAD
-    let { history,user } = this.props;
-      console.log( path);
-      console.log(this.props);
-=======
-    let { history, phone, user } = this.props;
-      // console.log( path);
-      // console.log(this.props);
->>>>>>> f8ce176af474035debd5652eeb7f6485fb690761
-      
+    let { history} = this.props;
         this.setState({
             currentPath: path
         })
-<<<<<<< HEAD
-    if (path === "/mine" && user === {}) {
-          // history.push('/login')
-      console.log(666);
-      
-=======
-    if (path === '/mine') {
-let a=localStorage.getItem("user")
-// localStorage.setItem()
-if(a==null){
-  path="/login"
-}
->>>>>>> f8ce176af474035debd5652eeb7f6485fb690761
+    
+    // 获取token
+    let Authorization = localStorage.getItem("Authorization");
+    if (Authorization) {
+      // 校验token是否过期或者被更改
+      axios.get('http://localhost:8011/verify', {
+        headers: {
+          Authorization
+        }
+      }).then(({ data }) => {
+        if (path === '/mine' && data.status === 0) {
+          history.push('/mycenter')
+       }
+        
+      })
+    } 
+    if (path === '/mine' && Authorization=== null) {
+          path ="/mycenter"
         }
         history.push(path)
   }
   componentDidMount() {
-    console.log(this.props.history.location.pathname);
+    console.log(this.props.history);
     
     this.setState({
       currentPath: this.props.history.location.pathname ? this.props.history.location.pathname : './home'
@@ -115,8 +112,8 @@ if(a==null){
        <Menu
             onClick={this.goto}
             selectedKeys={this.state.currentPath}
-          mode="horizontal"
-          style={{borderTop:'1px solid #e8e8e8'}}
+            mode="horizontal"
+            style={{borderTop:'1px solid #e8e8e8',fontSize:'0.28rem'}}
         >
             {
                 this.state.menu.map(item => {
@@ -127,7 +124,7 @@ if(a==null){
                                 // flexDirection:'column'
                         }}
                   >
-                         <Icon type={item.icon}/>
+                    <Icon type={item.icon} style={{fontSize:'0.28rem'}}/>
                          {item.text}
                      </Menu.Item>
                 })

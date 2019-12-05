@@ -56,7 +56,8 @@ class Login extends Component {
     right: "12%"}}/></a></div>
             </div>
             {/* Tab选项卡 */}
-            <div className="Tab_tab">
+                <div className="Tab_tab" style={{ textAlign: 'center',
+        fontSize:' 0.28rem'}}>
             <Tabs defaultActiveKey="1" onChange={callback}>
                 <TabPane tab="综合排序" key="1">
                 Content of Tab Pane 1

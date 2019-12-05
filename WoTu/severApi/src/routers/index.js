@@ -3,7 +3,7 @@ const express = require('express');
 let Router = express.Router();
 
 const {
-    formatData
+    formatData,token
 } = require('../utils')
 
 let HomeRouter = require('./Home');
