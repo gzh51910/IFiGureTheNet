@@ -85,7 +85,7 @@ class App extends Component{
         history.push(path)
   }
   componentDidMount() {
-    console.log(this.props.history);
+    // console.log(this.props.history);
     
     this.setState({
       currentPath: this.props.history.location.pathname ? this.props.history.location.pathname : './home'
