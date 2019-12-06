@@ -1,5 +1,0 @@
-{
-    "PORT": 8011,
-    "dbUrl": "mongodb://10.3.136.108:27017",
-    "dbName": "wotu"
-}

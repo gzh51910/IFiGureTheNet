@@ -1,0 +1,16 @@
+.add-lab{
+    display: inline-block;
+    width:100px;
+    height:30px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    color: black;
+}
+.add-box .ant-input{
+    height:40px;
+    border-radius: 0;
+    border-color: rgba(59, 59, 59, 0.65);
+    color: rgb(73, 73, 73);
+}
